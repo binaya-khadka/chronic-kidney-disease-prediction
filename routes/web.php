@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Layouts.app');
 });
+Route::get('/admin', function () {
+    return view('admin-login');
+});
+
+Route::get('/patient', function () {
+    return view('patient-login');
+});
+
+Route::get('/patient/create', [HomeController::class, 'create']);

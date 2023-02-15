@@ -1,0 +1,12 @@
+:root {
+    --df: flex;
+    --dg: grid;
+    --jcc: center;
+    --aic: center;
+    --fdr: row;
+    --fdc: column;
+
+
+    --mw: 1200px;
+    --ma: auto;
+}
