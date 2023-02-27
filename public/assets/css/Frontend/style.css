@@ -1,0 +1,15 @@
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    margin-top: 50px;
+}
+
+.container {
+    max-height: 100vh;
+    overflow-y: auto;
+}

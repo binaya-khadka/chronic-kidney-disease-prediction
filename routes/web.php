@@ -26,3 +26,15 @@ Route::get('/patient', function () {
 });
 
 Route::get('/patient/create', [HomeController::class, 'create']);
+
+
+// Backend
+
+Route::get('/admin/dashboard', function () {
+    return view('Backend.index');
+});
+
+
+Route::get('/home', function () {
+    return view('Frontend.index');
+});
