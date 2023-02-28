@@ -31,18 +31,18 @@
                   <th>Age</th>
                   <th>Email</th>
                   <th>Phone</th>
-                  <th>Actions</th>
+                  {{-- <th>Actions</th> --}}
                 </tr>
               </thead>
               <tbody>
-                @foreach($patients['datas'] as $patient)
+                @foreach($data['patients'] as $patient)
                 <tr>
                   <td>{{$patient->id}}</td>
                   <td>{{$patient->name}}</td>
                   <td>{{$patient->age}}</td>
                   <td>{{$patient->email}}</td>
                   <td>{{$patient->phone}}</td>
-                  <td>
+                  {{-- <td>
                     <a href="{{ route('admin.patient.show', $patient->id) }}" class="btn btn-success">Show</a>
                     <form action="{{ route('admin.patient.delete', $patient->id) }}" method="POST"
                       style="display:inline-block">
@@ -50,7 +50,7 @@
                       @csrf
                       <button type="submit" class="btn btn-danger">Delete</button>
                     </form>
-                  </td>
+                  </td> --}}
                 </tr>
                 @endforeach
               </tbody>
