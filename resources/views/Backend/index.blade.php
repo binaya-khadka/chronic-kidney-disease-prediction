@@ -3,6 +3,19 @@
 @section('title', 'Dashboard')
 
 @section('content')
+<div class="content-wrapper">
+  <div class="card-body">
+    @if (session('status'))
+    <div class="alert alert-success" role="alert">
+      {{ session('status') }}
+    </div>
+    @endif
+    <span class="text text-success" style="font-weight: 700;">
+      {{ __('You are logged in!') }}
+    </span>
+  </div>
+</div>
+
 {{-- <div class="content-wrapper">
 
   <div class="content-header">
