@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,18 +15,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('Layouts.app');
-});
-Route::get('/admin', function () {
-    return view('admin-login');
-});
+// Route::get('/', function () {
+//     return view('Layouts.app');
+// });
+// Route::get('/admin', function () {
+//     return view('admin-login');
+// });
 
-Route::get('/patient', function () {
-    return view('patient-login');
-});
+// Route::get('/patient', function () {
+//     return view('patient-login');
+// });
 
-Route::get('/patient/create', [HomeController::class, 'create']);
+// Route::get('/patient/create', [HomeController::class, 'create']);
 
 
 // Backend
@@ -38,3 +39,9 @@ Route::get('/admin/dashboard', function () {
 Route::get('/home', function () {
     return view('Frontend.index');
 });
+
+Route::get('/admin', [AdminController::class, 'index']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\Backend\AdminController::class, 'index'])->name('home');
