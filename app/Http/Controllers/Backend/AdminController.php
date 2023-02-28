@@ -15,11 +15,19 @@ class AdminController extends Controller
 
     public function index()
     {
-        return view('Backend.index');
+        $total_number_of_patients = \App\Models\Patient::count();
+        return view('Backend.index', ['total_patients' => $total_number_of_patients]);
     }
 
     public function indexPatient()
     {
         return view('');
+    }
+
+    public function patient_index()
+    {
+        $patients['datas'] = \App\Models\Patient::all();
+        // dd($patients);
+        return view('Backend.Patient.index', compact('patients'));
     }
 }
