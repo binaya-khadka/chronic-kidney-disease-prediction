@@ -15,9 +15,12 @@
 
 <body class="hold-transition sidebar-mini">
   <div class="wrapper">
+
     @yield('navbar')
     @yield('side_navbar')
-    @yield('content')
+    <div class="content-wrapper">
+      @yield('content')
+    </div>
     @yield('footer')
   </div>
   @yield('footer_script')

@@ -40,8 +40,26 @@ Route::get('/home', function () {
     return view('Frontend.index');
 });
 
-Route::get('/admin', [AdminController::class, 'index']);
+Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\Backend\AdminController::class, 'index'])->name('home');
+
+
+// Route::get('/homepage/register', [HomeController::class, 'register'])->name('homepage.register');
+// Route::post('/homepage/register', [HomeController::class, 'register_store'])->name('homepage.register.store');
+
+Route::prefix('/homepage/patient')->name('homepage.patient.')->group(function () {
+    Route::get('/register', [HomeController::class, 'register'])->name('register');
+    Route::post('/register', [HomeController::class, 'register_store'])->name('register.store');
+    Route::get('/login', [HomeController::class, 'login'])->name('login');
+    Route::post('/login', [HomeController::class, 'login_patient'])->name('login.patient');
+});
+
+
+Route::get('/admin/patient/index', [AdminController::class, 'patient_index'])->name('admin.patient.index');
+Route::get('/admin/patient/show/{id}', [AdminController::class, 'patient_show'])->name('admin.patient.show');
+Route::delete('/admin/patient/{id}', [AdminController::class, 'patient_delete'])->name('admin.patient.delete');
+
+Route::get('/admin/patient/trashed', [AdminController::class, 'patient_trash_store'])->name('admin.patient.trashed');
