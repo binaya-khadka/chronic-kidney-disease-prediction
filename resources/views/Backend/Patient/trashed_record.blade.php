@@ -5,7 +5,7 @@
   <div class="container-fluid">
     <div class="row mb-2">
       <div class="col-sm-6">
-        <h1>Patient Table</h1>
+        <h1>Deleted Patient Table</h1>
       </div>
 
     </div>
@@ -31,7 +31,7 @@
                   <th>Age</th>
                   <th>Email</th>
                   <th>Phone</th>
-                  {{-- <th>Actions</th> --}}
+                  <th>Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -42,15 +42,16 @@
                   <td>{{$patient->age}}</td>
                   <td>{{$patient->email}}</td>
                   <td>{{$patient->phone}}</td>
-                  {{-- <td>
-                    <a href="{{ route('admin.patient.show', $patient->id) }}" class="btn btn-success">Show</a>
-                    <form action="{{ route('admin.patient.delete', $patient->id) }}" method="POST"
-                      style="display:inline-block">
+                  <td>
+                    <a href="{{route('admin.patient.trashed.restore', $patient->id)}}"
+                      class="btn btn-primary">Restore</a>
+                    <form action="{{ route('admin.patient.trashed.delete', $patient->id) }}" method="post"
+                      style="display: inline-block;">
                       @method("delete")
                       @csrf
-                      <button type="submit" class="btn btn-danger">Delete</button>
+                      <button type="submit" class="btn btn-danger">Force Delete</button>
                     </form>
-                  </td> --}}
+                  </td>
                 </tr>
                 @endforeach
               </tbody>

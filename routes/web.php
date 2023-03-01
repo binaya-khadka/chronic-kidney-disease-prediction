@@ -63,3 +63,5 @@ Route::get('/admin/patient/show/{id}', [AdminController::class, 'patient_show'])
 Route::delete('/admin/patient/{id}', [AdminController::class, 'patient_delete'])->name('admin.patient.delete');
 
 Route::get('/admin/patient/trashed', [AdminController::class, 'patient_trash_store'])->name('admin.patient.trashed');
+Route::delete('/admin/patient/trashed/{id}', [AdminController::class, 'patient_trash_force_delete'])->name('admin.patient.trashed.delete');
+Route::get('/admin/patient/trashed/restore/{id}', [AdminController::class, 'patient_trash_record_restore'])->name('admin.patient.trashed.restore');

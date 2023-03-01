@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Patient;
 use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
 
 class HomeController extends Controller
 {
@@ -25,8 +27,9 @@ class HomeController extends Controller
         // $patient_password = bcrypt($request->password);
         // $patient_phone = $request->phone;
 
-        $patient = \App\Models\Patient::create($request->all());
-        // $patient;
+        // $validation = $this->validate(['name' => 'required', 'email' => 'required']);
+
+        $patient = Patient::create($request->all());
         if ($patient) {
             request()->session()->flash('success', 'Account Created Successfully');
             return redirect()->route('homepage.patient.register');

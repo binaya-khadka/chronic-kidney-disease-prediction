@@ -26,7 +26,7 @@
             <table class="table table-head-fixed text-nowrap">
               <thead>
                 <tr>
-                  <th>ID</th>
+                  <th>SN</th>
                   <th>Name</th>
                   <th>Age</th>
                   <th>Email</th>
@@ -37,7 +37,7 @@
               <tbody>
                 @foreach($patients['datas'] as $patient)
                 <tr>
-                  <td>{{$patient->id}}</td>
+                  <td>{{$loop->index + 1}}</td>
                   <td>{{$patient->name}}</td>
                   <td>{{$patient->age}}</td>
                   <td>{{$patient->email}}</td>
