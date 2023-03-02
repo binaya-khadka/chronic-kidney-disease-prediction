@@ -41,7 +41,7 @@ class AdminController extends Controller
   {
     $data['patient'] = Patient::find($id);
     if (!$data['patient']) {
-      request()->session()->flash('Invalid Request');
+      request()->session()->flash('error', 'Invalid Request');
       return redirect()->route('admin.patient.index');
     }
     if ($data['patient']->delete()) {
