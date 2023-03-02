@@ -29,6 +29,15 @@ class HomeController extends Controller
 
         // $validation = $this->validate(['name' => 'required', 'email' => 'required']);
 
+        // $this->validate([]);
+        $validated = $request->validate([
+            'name' => 'required',
+            'age' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+            'phone' => 'required|min:10|max:10',
+        ]);
+
         $patient = Patient::create($request->all());
         if ($patient) {
             request()->session()->flash('success', 'Account Created Successfully');
