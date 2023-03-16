@@ -47,4 +47,13 @@ class HomeController extends Controller
         }
         return redirect()->route('homepage.patient.register');
     }
+
+    public function analysis_show() {
+        return view('Frontend.analysislog');
+    }
+
+    public function homepage() {
+        return view('Frontend.homepage');
+    }
+
 }

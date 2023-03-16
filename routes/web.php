@@ -15,9 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('Layouts.app');
-// });
 // Route::get('/admin', function () {
 //     return view('admin-login');
 // });
@@ -66,6 +63,9 @@ Route::prefix('/admin/patient/')->name('admin.patient.')->group(function () {
     Route::get('trashed/restore/{id}', [AdminController::class, 'patient_trash_record_restore'])->name('trashed.restore');
 });
 
+
+Route::get('/analysis', [HomeController::class, 'analysis_show'])->name('analysis.show');
+Route::get('/', [HomeController::class, 'homepage'])->name('homepage');
 
 // Route::get('/admin/patient/index', [AdminController::class, 'patient_index'])->name('admin.patient.index');
 // Route::get('/admin/patient/show/{id}', [AdminController::class, 'patient_show'])->name('admin.patient.show');
