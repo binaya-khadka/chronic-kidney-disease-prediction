@@ -10,8 +10,8 @@
           <form>
             <div class="row">
               <div class="col-md-6">
-                <label for="fever" class="form-label">Fever</label>
-                <input type="text" class="form-control" id="fever" name="fever">
+                <label for="fever" class="form-label">Age</label>
+                <input type="text" class="form-control" id="age" name="age">
               </div>
               <div class="col-md-6">
                 <label for="blood-pressure" class="form-label">Blood Pressure</label>
