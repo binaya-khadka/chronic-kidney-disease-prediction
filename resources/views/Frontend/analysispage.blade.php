@@ -122,34 +122,52 @@
             <div class="row">
               <div class="col-md-6">
                 <label for="sodium" class="form-label">Hypertension</label>
-                <input type="text" class="form-control" id="hypertension" name="htn">
+                <select class="form-control" id="hypertension" name="htn">
+                  <option value="0">Yes</option>
+                  <option value="1">No</option>
+                </select>
               </div>
 
               <div class="col-md-6">
                 <label for="sodium" class="form-label">Diabetes Mellitus</label>
-                <input type="text" class="form-control" id="diabetes-mellitus" name="dm">
+                <select class="form-control" id="diabetes-mellitus" name="dm">
+                  <option value="0">Yes</option>
+                  <option value="1">No</option>
+                </select>
               </div>
             </div>
             <div class="row">
               <div class="col-md-6">
                 <label for="sodium" class="form-label">Coronary Arrey Disease</label>
-                <input type="text" class="form-control" id="coronary-arrey-diasease" name="cad">
+                <select class="form-control" id="coronary-arrey-diasease" name="cad">
+                  <option value="0">Yes</option>
+                  <option value="1">No</option>
+                </select>
               </div>
 
               <div class="col-md-6">
                 <label for="sodium" class="form-label">Appetite</label>
-                <input type="text" class="form-control" id="appetite" name="appet">
+                <select class="form-control" id="appetite" name="appet">
+                  <option value="0">Poor</option>
+                  <option value="1">Good</option>
+                </select>
               </div>
             </div>
             <div class="row">
               <div class="col-md-6">
                 <label for="sodium" class="form-label">Pedal Edema</label>
-                <input type="text" class="form-control" id="pedal-edema" name="pe"> 
+                <select class="form-control" id="pedal-edema" name="pe">
+                  <option value="0">Yes</option>
+                  <option value="1">No</option>
+                </select>
               </div>
 
               <div class="col-md-6">
                 <label for="sodium" class="form-label">Anemia</label>
-                <input type="text" class="form-control" id="anemia" name="ane">
+                <select class="form-control" id="anemia" name="ane">
+                  <option value="0">Yes</option>
+                  <option value="1">No</option>
+                </select>
               </div>
             </div>
             <div class="row mt-3">
