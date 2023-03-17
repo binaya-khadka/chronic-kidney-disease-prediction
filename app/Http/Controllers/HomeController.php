@@ -56,4 +56,8 @@ class HomeController extends Controller
         return view('Frontend.homepage');
     }
 
+    public function analysispage(){
+        return view('Frontend.analysispage');
+    }
+
 }

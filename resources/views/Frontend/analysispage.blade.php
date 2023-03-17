@@ -20,18 +20,38 @@
             </div>
             <div class="row">
               <div class="col-md-6">
-                <label for="specific-gravity" class="form-label">Specific Gravity</label>
-                <input type="text" class="form-control" id="specific-gravity" name="sg">
+                <label for="blood-pressure" class="form-label">Blood Pressure</label>
+                <select class="form-control" id="blood-pressure" name="bp">
+                  <option value="1.005">1.005</option>
+                  <option value="1.010">1.010</option>
+                  <option value="1.015">1.015</option>
+                  <option value="1.020">1.020</option>
+                  <option value="1.025">1.025</option>
+                </select>
               </div>
               <div class="col-md-6">
                 <label for="albumin" class="form-label">Albumin</label>
-                <input type="text" class="form-control" id="albumin" name="al">
+                <select class="form-control" id="albumin" name="al">
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
               </div>
             </div>
             <div class="row">
               <div class="col-md-6">
                 <label for="sugar" class="form-label">Sugar</label>
-                <input type="text" class="form-control" id="sugar" name="su">
+                <select class="form-control"id="sugar" name="su">
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
               </div>
               <div class="col-md-6">
                 <label for="red-blood-cells" class="form-label">Red Blood Cells</label>
