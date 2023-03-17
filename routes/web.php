@@ -74,3 +74,9 @@ Route::get('/', [HomeController::class, 'homepage'])->name('homepage');
 // Route::get('/admin/patient/trashed', [AdminController::class, 'patient_trash_store'])->name('admin.patient.trashed');
 // Route::delete('/admin/patient/trashed/{id}', [AdminController::class, 'patient_trash_force_delete'])->name('admin.patient.trashed.delete');
 // Route::get('/admin/patient/trashed/restore/{id}', [AdminController::class, 'patient_trash_record_restore'])->name('admin.patient.trashed.restore');
+
+
+Route::get('/python-test', function () {
+    $output = exec('python ../app/Pickles/scripts.py');
+    return $output;
+});

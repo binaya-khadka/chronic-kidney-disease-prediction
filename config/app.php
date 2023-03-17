@@ -27,6 +27,7 @@ return [
     | services the application utilizes. Set this in your ".env" file.
     |
     */
+    
 
     'env' => env('APP_ENV', 'production'),
 
@@ -181,6 +182,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        // \Riipandi\Laravel\Python\PythonServiceProvider::class,
 
         /*
          * Package Service Providers...
