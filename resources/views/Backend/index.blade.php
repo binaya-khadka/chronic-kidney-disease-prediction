@@ -3,7 +3,6 @@
 @section('title', 'Dashboard')
 
 @section('content')
-{{-- <div class="content-wrapper"> --}}
   <div class="card-body">
     @if (session('status'))
     <div class="alert alert-success" role="alert">
@@ -35,6 +34,4 @@
       </div>
     </div>
   </div>
-  {{--
-</div> --}}
 @endsection

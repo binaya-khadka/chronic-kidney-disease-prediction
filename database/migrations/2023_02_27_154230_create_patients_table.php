@@ -19,7 +19,7 @@ return new class extends Migration
             $table->bigInteger('age');
             $table->string('email');
             $table->string('password');
-            $table->integer('phone');
+            $table->bigInteger('phone');
             $table->softDeletes();
             $table->timestamps();
         });

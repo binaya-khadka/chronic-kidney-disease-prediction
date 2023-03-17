@@ -21,4 +21,9 @@ class Patient extends Model
     protected $hidden = [
         'password',
     ];
+
+    public function analyses()
+    {
+        return $this->hasOne(Analysis::class, 'id');
+    }
 }
