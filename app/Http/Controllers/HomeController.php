@@ -49,7 +49,6 @@ class HomeController extends Controller
         }
         return redirect()->route('homepage.patient.register');
     }
-
     public function analysis_create()
     {
         // $patient_record_only_id_row = Patient::all()->pluck('id');
@@ -63,5 +62,12 @@ class HomeController extends Controller
         $store_in_database;
         return redirect()->route('analysis.create');
         // return Redirect::back()->with('message', 'successful');
+    }
+    public function analysis_show() {
+        return view('Frontend.analysislog');
+    }
+
+    public function homepage() {
+        return view('Frontend.homepage');
     }
 }
