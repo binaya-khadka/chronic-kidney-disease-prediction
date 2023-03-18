@@ -60,4 +60,13 @@ class HomeController extends Controller
         return view('Frontend.analysispage');
     }
 
+    public function about(){
+        return view ('Frontend.aboutus');
+    }
+    public function contact(){
+        return view('Frontend.contactus');
+    }
+    public function updateprofile(){
+        return view('Frontend.updateprofile');
+    }
 }

@@ -11,5 +11,9 @@ body {
 
 .container {
     max-height: 100vh;
-    overflow-y: auto;
+    /* overflow-y: auto; */
 }
+
+.container2 {
+    margin-top: 80px; /* leave some space below the navbar */
+  }

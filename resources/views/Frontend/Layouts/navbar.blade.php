@@ -9,19 +9,19 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" href="AnalysisPage.html">Analysis Page</a>
+          <a class="nav-link" href="/analysispage">Analysis Page</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="AnalyzeLog.html">Analysis Log</a>
+          <a class="nav-link" href="/analysis">Analysis Log</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="Udpate.html">Update Profile</a>
+          <a class="nav-link" href="/updateprofile">Update Profile</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="AboutUs.html">About Us</a>
+          <a class="nav-link" href="/about">About Us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="ContactUs.html">Contact Us</a>
+          <a class="nav-link" href="/contact">Contact Us</a>
         </li>
       </ul>
     </div>

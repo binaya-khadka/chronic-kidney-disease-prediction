@@ -1,7 +1,7 @@
 @extends('Frontend.Layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container container2">
   <div class="row justify-content-center">
     <div class="col-md-6 col-lg-4">
       <div class="card">
@@ -20,8 +20,8 @@
             </div>
             <div class="row">
               <div class="col-md-6">
-                <label for="blood-pressure" class="form-label">Blood Pressure</label>
-                <select class="form-control" id="blood-pressure" name="bp">
+                <label for="blood-pressure" class="form-label">Specific Gravity</label>
+                <select class="form-control" id="specific-gravity" name="sg">
                   <option value="1.005">1.005</option>
                   <option value="1.010">1.010</option>
                   <option value="1.015">1.015</option>
@@ -29,6 +29,7 @@
                   <option value="1.025">1.025</option>
                 </select>
               </div>
+           
               <div class="col-md-6">
                 <label for="albumin" class="form-label">Albumin</label>
                 <select class="form-control" id="albumin" name="al">
@@ -55,23 +56,36 @@
               </div>
               <div class="col-md-6">
                 <label for="red-blood-cells" class="form-label">Red Blood Cells</label>
-                <input type="text" class="form-control" id="red-blood-cells" name="rbc">
+                <select class="form-control" id="red-blood-cells" name="rbc">
+                  <option value="0">Normal</option>
+                  <option value="1">Abnormal</option>
+                </select>
               </div>
             </div>
             <div class="row">
               <div class="col-md-6">
                 <label for="pus-cell" class="form-label">Pus Cell</label>
-                <input type="text" class="form-control" id="pus-cell" name="pc">
+                <select class="form-control" id="pus-cell" name="pc">
+                  <option value="0">Normal</option>
+                  <option value="1">Abnormal</option>
+                </select>
               </div>
               <div class="col-md-6">
                 <label for="pes-cell-clumps" class="form-label">Pes Cell Clumps</label>
                 <input type="text" class="form-control" id="pes-cell-clumps" name="pcc">
+                <select class="form-control" id="pes-cell-clumps" name="pcc">
+                  <option value="0">Npt Present </option>
+                  <option value="1">Present</option>
+                </select>
               </div>
             </div>
             <div class="row">
               <div class="col-md-6">
                 <label for="bacteria" class="form-label">Bacteria</label>
-                <input type="text" class="form-control" id="bacteria" name="ba">
+                <select class="form-control" id="bacteria" name="ba">
+                  <option value="0">Npt Present </option>
+                  <option value="1">Present</option>
+                </select>
               </div>
               <div class="col-md-6">
                 <label for="blood-glucose-random" class="form-label">Blood Glucose Random</label>

@@ -66,6 +66,9 @@ Route::prefix('/admin/patient/')->name('admin.patient.')->group(function () {
 
 Route::get('/analysis', [HomeController::class, 'analysis_show'])->name('analysis.show');
 Route::get('/analysispage', [HomeController::class, 'analysispage'])->name('analysis.page');
+Route::get('/about', [HomeController::class, 'about'])->name('about');
+Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::get('/updateprofile', [HomeController::class, 'updateprofile'])->name('updateprofile');
 Route::get('/', [HomeController::class, 'homepage'])->name('homepage');
 
 // Route::get('/admin/patient/index', [AdminController::class, 'patient_index'])->name('admin.patient.index');
