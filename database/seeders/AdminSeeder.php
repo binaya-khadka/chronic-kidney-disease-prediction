@@ -22,11 +22,6 @@ class AdminSeeder extends Seeder
                 'email' => 'admin@orchid.com',
                 'password' => bcrypt('admin'),
             ],
-            [
-                'name' => 'binaya',
-                'email' => 'binaya@admin.com',
-                'password' => bcrypt('admin'),
-            ]
         ]);
     }
 }
