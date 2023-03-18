@@ -63,14 +63,26 @@ class HomeController extends Controller
         return redirect()->route('analysis.create');
         // return Redirect::back()->with('message', 'successful');
     }
-    public function analysis_show() {
+    public function analysis_show()
+    {
         return view('Frontend.analysislog');
     }
 
-    public function homepage() {
+    public function homepage()
+    {
         return view('Frontend.homepage');
     }
+
     public function prediction(){
         return view('Frontend.prediction');
+
+    public function aboutUs()
+    {
+        return view('Frontend.aboutus');
+    }
+
+    public function contactUs()
+    {
+        return view('Frontend.contactus');
     }
 }

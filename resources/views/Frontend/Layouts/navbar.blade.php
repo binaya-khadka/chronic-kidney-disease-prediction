@@ -9,19 +9,19 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" href="AnalysisPage.html">Analysis Page</a>
+          <a class="nav-link" href="">Analysis Page</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="AnalyzeLog.html">Analysis Log</a>
+          <a class="nav-link" href="{{route('analysis.show')}}">Analysis Log</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="Udpate.html">Update Profile</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="AboutUs.html">About Us</a>
+          <a class="nav-link" href="{{route('Frontend.aboutus')}}">About Us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="ContactUs.html">Contact Us</a>
+          <a class="nav-link" href="{{route('Frontend.contactus')}}">Contact Us</a>
         </li>
       </ul>
     </div>
