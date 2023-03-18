@@ -70,4 +70,7 @@ class HomeController extends Controller
     public function homepage() {
         return view('Frontend.homepage');
     }
+    public function prediction(){
+        return view('Frontend.prediction');
+    }
 }
