@@ -14,20 +14,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-// Route::get('/admin', function () {
-//     return view('admin-login');
-// });
-
-// Route::get('/patient', function () {
-//     return view('patient-login');
-// });
-
-// Route::get('/patient/create', [HomeController::class, 'create']);
-
-
-// Backend
-
 Route::get('/admin/dashboard', function () {
     return view('Backend.index');
 });
@@ -55,6 +41,12 @@ Route::prefix('/homepage/patient')->name('homepage.patient.')->group(function ()
 });
 
 Route::prefix('/admin/patient/')->name('admin.patient.')->group(function () {
+
+
+    Route::get('/report', [AdminController::class, 'patient_report'])->name('report');
+    Route::get('/report/{id}', [AdminController::class, 'patient_report_show'])->name('report.show');
+
+
     Route::get('index', [AdminController::class, 'patient_index'])->name('index');
     Route::get('show/{id}', [AdminController::class, 'patient_show'])->name('show');
     Route::delete('{id}', [AdminController::class, 'patient_delete'])->name('delete');
@@ -63,6 +55,9 @@ Route::prefix('/admin/patient/')->name('admin.patient.')->group(function () {
     Route::get('trashed/restore/{id}', [AdminController::class, 'patient_trash_record_restore'])->name('trashed.restore');
 });
 
+Route::get('/analysis/create', [HomeController::class, 'analysis_create'])->name('analysis.create');
+Route::post('/analysis/store', [HomeController::class, 'analysis_store'])->name('analysis.store');
+Route::get('/anlaysis', [HomeController::class, 'analysis_index'])->name('analysis.index');
 
 Route::get('/analysis', [HomeController::class, 'analysis_show'])->name('analysis.show');
 Route::get('/', [HomeController::class, 'homepage'])->name('homepage');

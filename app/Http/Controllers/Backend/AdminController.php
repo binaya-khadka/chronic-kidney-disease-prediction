@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Analysis;
 use App\Models\Patient;
 use Illuminate\Http\Request;
 
@@ -86,5 +87,28 @@ class AdminController extends Controller
       request()->session()->flash('error', 'Sorry Delete Failed. Try again Later');
     }
     return redirect()->route('admin.patient.trashed');
+  }
+
+
+  public function patient_report()
+  {
+
+    $patients = Patient::all();
+
+    // dd($patients);
+    $patient_id = 1;
+    $patient = Patient::whereId($patient_id)->get();
+    $report = Analysis::where('patient_id', '=', $patient_id)->get();
+    // dd($report);
+    return view('Backend.Patient.report', ['patients' => $patients]);
+  }
+
+  public function patient_report_show($id)
+  {
+    $patient_id = $id;
+    $report = Analysis::where('patient_id', '=', $patient_id)->first();
+    // dd($report->age);
+    // dd($report->class);
+    return view('Backend.Patient.showReport', compact('report'));
   }
 }

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Analysis;
 use App\Models\Patient;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Validation\ValidationException;
 
 class HomeController extends Controller
@@ -47,7 +49,20 @@ class HomeController extends Controller
         }
         return redirect()->route('homepage.patient.register');
     }
-
+    public function analysis_create()
+    {
+        // $patient_record_only_id_row = Patient::all()->pluck('id');
+        // return view('Frontend.analysispage', ['patient_id' => $patient_record_only_id_row]);
+        $patient_record = Patient::all();
+        return view('Frontend.analysispage', ['patient_id' => $patient_record]);
+    }
+    public function analysis_store(Request $req)
+    {
+        $store_in_database = Analysis::create($req->all());
+        $store_in_database;
+        return redirect()->route('analysis.create');
+        // return Redirect::back()->with('message', 'successful');
+    }
     public function analysis_show() {
         return view('Frontend.analysislog');
     }
@@ -55,5 +70,4 @@ class HomeController extends Controller
     public function homepage() {
         return view('Frontend.homepage');
     }
-
 }
