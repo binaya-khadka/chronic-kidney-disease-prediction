@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::get('/admin/dashboard', function () {
     return view('Backend.index');
 });
@@ -57,10 +58,13 @@ Route::prefix('/admin/patient/')->name('admin.patient.')->group(function () {
 
 Route::get('/analysis/create', [HomeController::class, 'analysis_create'])->name('analysis.create');
 Route::post('/analysis/store', [HomeController::class, 'analysis_store'])->name('analysis.store');
-Route::get('/anlaysis', [HomeController::class, 'analysis_index'])->name('analysis.index');
+// Route::get('/anlaysis', [HomeController::class, 'analysis_index'])->name('analysis.index');
 
 Route::get('/analysis', [HomeController::class, 'analysis_show'])->name('analysis.show');
 Route::get('/', [HomeController::class, 'homepage'])->name('homepage');
+
+Route::get('/frontend/aboutus', [HomeController::class, 'aboutUs'])->name('Frontend.aboutus');
+Route::get('/frontend/contactus', [HomeController::class, 'contactUs'])->name('Frontend.contactus');
 
 // Route::get('/admin/patient/index', [AdminController::class, 'patient_index'])->name('admin.patient.index');
 // Route::get('/admin/patient/show/{id}', [AdminController::class, 'patient_show'])->name('admin.patient.show');
