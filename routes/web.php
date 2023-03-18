@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PredictionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -62,6 +63,10 @@ Route::post('/analysis/store', [HomeController::class, 'analysis_store'])->name(
 
 Route::get('/analysis', [HomeController::class, 'analysis_show'])->name('analysis.show');
 Route::get('/', [HomeController::class, 'homepage'])->name('homepage');
+Route::get('/prediction', [HomeController::class, 'prediction'])->name('prediction');
+
+
+Route::post('/predict', [PredictionController::class, 'predict'])->name('predict');
 
 Route::get('/frontend/aboutus', [HomeController::class, 'aboutUs'])->name('Frontend.aboutus');
 Route::get('/frontend/contactus', [HomeController::class, 'contactUs'])->name('Frontend.contactus');

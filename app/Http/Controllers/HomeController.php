@@ -73,6 +73,9 @@ class HomeController extends Controller
         return view('Frontend.homepage');
     }
 
+    public function prediction(){
+        return view('Frontend.prediction');
+
     public function aboutUs()
     {
         return view('Frontend.aboutus');
