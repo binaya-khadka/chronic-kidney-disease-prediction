@@ -36,32 +36,31 @@ class PredictionController extends Controller
     $a->appet = $request->appet;
     $a->pe = $request->pe;
     $a->ane = $request->ane;
+    $age = $a->age;
+    $bp = $a->bp;
+    $sg = $a->sg;
+    $al = $a->al;
+    $su = $a->su;
+    $rbc = $a->rbc;
+    $pc = $a->pc;
+    $pcc = $a->pcc;
+    $ba = $a->ba;
+    $bgr = $a->bgr;
+    $bu = $a->bu;
+    $sc = $a->sc;
+    $sod = $a->sod;
+    $pot = $a->pot;
+    $hemo = $a->hemo;
+    $pcv = $a->pcv;
+    $wc = $a->wc;
+    $rc = $a->rc;
+    $htn = $a->htn;
+    $dm = $a->dm;
+    $cad = $a->cad;
+    $appet = $a->appet;
+    $pe = $a->pe;
+    $ane = $a->ane;
 
-    $age = $a->age ;
-    $bp = $a->bp ;
-    $sg = $a->sg ;
-    $al = $a->al ;
-    $su = $a->su ;
-    $rbc = $a->rbc ;
-    $pc = $a->pc ;
-    $pcc = $a->pcc ;
-    $ba = $a->ba ;
-    $bgr = $a->bgr ;
-    $bu = $a->bu ;
-    $sc = $a->sc ;
-    $sod = $a->sod ;
-    $pot = $a->pot ;
-    $hemo = $a->hemo ;
-    $pcv = $a->pcv ;
-    $wc = $a->wc ;
-    $rc = $a->rc ;
-    $htn = $a->htn ;
-    $dm = $a->dm ;
-    $cad = $a->cad ;
-    $appet = $a->appet ;
-    $pe = $a->pe ;
-    $ane = $a->ane ;
-    
     // Pass the form data as arguments to the Python script
     $scriptPath = base_path('app/Pickles/script3.py');
     $command = "python $scriptPath $age $bp $sg $al $su $rbc $pc $pcc $ba $bgr $bu $sc $sod $pot $hemo $pcv $wc $rc $htn $dm $cad $appet $pe $ane ";
@@ -72,5 +71,5 @@ class PredictionController extends Controller
 
     // Display the output in the frontend
     return redirect()->route('analysis.log')->with('mssg', 'Successfully Stored The Data');
-}
+  }
 }
