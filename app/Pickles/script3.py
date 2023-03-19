@@ -38,36 +38,70 @@ with open(model_file_path, 'rb') as f:
     model = pickle.load(f)
 
 # Take input from the user
-age = int(sys.argv[1])
-bp = int(sys.argv[2])
+age = float(sys.argv[1])
+bp = float(sys.argv[2])
 sg = float(sys.argv[3])
-al = int(sys.argv[4])
-su = int(sys.argv[5])
-rbc = sys.argv[6]
-pc = sys.argv[7]
-pcc = sys.argv[8]
-ba = sys.argv[9]
-bgr = int(sys.argv[10])
-bu = int(sys.argv[11])
+al = float(sys.argv[4])
+su = float(sys.argv[5])
+rbc = float(sys.argv[6])
+pc = float(sys.argv[7])
+pcc = float(sys.argv[8])
+ba = float(sys.argv[9])
+bgr = float(sys.argv[10])
+bu = float(sys.argv[11])
 sc = float(sys.argv[12])
-sod = int(sys.argv[13])
+sod = float(sys.argv[13])
 pot = float(sys.argv[14])
 hemo = float(sys.argv[15])
-pcv = int(sys.argv[16])
-wc = int(sys.argv[17])
+pcv = float(sys.argv[16])
+wc = float(sys.argv[17])
 rc = float(sys.argv[18])
-htn = sys.argv[19]
-dm = sys.argv[20]
-cad = sys.argv[21]
-appet = sys.argv[22]
-pe = sys.argv[23]
-ane = sys.argv[24]
+htn = float(sys.argv[19])
+dm = float(sys.argv[20])
+cad = float(sys.argv[21])
+appet = float(sys.argv[22])
+pe = float(sys.argv[23])
+ane = float(sys.argv[24])
 
+
+# print("hello")
+# print(age, bp, sg, al, su, rbc, pc, pcc, ba, bgr, bu, sc, sod, pot, hemo, pcv, wc, rc, htn, dm, cad, appet, pe, ane)
+
+
+# print(type(age))
+# print(type(bp))
+# print(type(sg))
+# print(type(al))
+# print(type(su))
+# print(type(rbc))
+# print(type(pc))
+# print(type(pcc))
+# print(type(ba))
+# print(type(bgr))
+# print(type(bu))
+# print(type(sc))
+# print(type(sod))
+# print(type(pot))
+# print(type(hemo))
+# print(type(pcv))
+# print(type(wc))
+# print(type(rc))
+# print(type(htn))
+# print(type(dm))
+# print(type(cad))
+# print(type(appet))
+# print(type(pe))
+# print(type(ane))
 # Process the input using the loaded model
-# X = np.array([[age, bp, sg, al, su, rbc, pc, pcc, ba, bgr, bu, sc, sod, pot, hemo, pcv, wc, rc, htn, dm, cad, appet, pe, ane]])
+X = pd.DataFrame([[age, bp, sg, al, su, rbc, pc, pcc, ba, bgr, bu, sc, sod, pot, hemo, pcv, wc, rc, htn, dm, cad, appet, pe, ane]])
 # X = np.array([[50, 80, 1.015, 0, 1, 1, 0, 0, 0,  219, 176, 13.8, 136, 4.5, 8.6, 24, 13200, 2.7, 1, 0, 0, 0, 1,1]])
 
-X = pd.DataFrame([[age, bp, sg, al, su, rbc, pc, pcc, ba, bgr, bu, sc, sod, pot, hemo, pcv, wc, rc, htn, dm, cad, appet, pe, ane]])
+# 0 CKD
+# X = pd.DataFrame([[50, 80, 1.015, 0, 1, 1, 0, 0, 0,  219, 176, 13.8, 136, 4.5, 8.6, 24, 13200, 2.7, 1, 0, 0, 0, 1,1]])
+
+#1 NotCKD
+# X = pd.DataFrame([[58.0,80.0,1.025,0.0,0.0,1,1,0,0,131.0,18.0,1.1,141.0,3.5,15.8,53.0,6800.0,6.1,0,0,0,0,0,0]])
+
 
 # print(X)
 y_pred = model.predict(X)
