@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Analysis;
 use App\Models\Patient;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Validation\ValidationException;
 
@@ -62,9 +63,11 @@ class HomeController extends Controller
         $store_in_database;
         return redirect()->route('analysis.create')->with('mssg', 'Successfully Stored The Data');
     }
-    public function analysis_show()
+    public function analysis_log()
     {
-        return view('Frontend.analysislog');
+        $user = auth()->user()->id;
+        $getting_data_of_user = DB::table('analyses')->where('patient_id', $user)->get();
+        return view('Frontend.analysislog', ['user_data' => $getting_data_of_user]);
     }
 
     public function homepage()
@@ -72,7 +75,8 @@ class HomeController extends Controller
         return view('Frontend.homepage');
     }
 
-    public function prediction(){
+    public function prediction()
+    {
         return view('Frontend.prediction');
     }
     public function aboutUs()
@@ -84,5 +88,4 @@ class HomeController extends Controller
     {
         return view('Frontend.contactus');
     }
-    
 }
