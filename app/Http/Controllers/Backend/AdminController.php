@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Analysis;
 use App\Models\Contactus;
 use App\Models\Patient;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -18,7 +19,7 @@ class AdminController extends Controller
 
   public function index()
   {
-    $total_number_of_patients = Patient::count();
+    $total_number_of_patients = User::all()->where('isAdmin', '=', '0')->count();
     return view('Backend.index', ['total_patients' => $total_number_of_patients]);
   }
 
