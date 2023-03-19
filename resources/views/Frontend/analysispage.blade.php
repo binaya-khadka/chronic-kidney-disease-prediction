@@ -2,15 +2,6 @@
 
 @section('content')
 <div class="container">
-  <div class="" style="margin-top: 6rem;">
-    @if (Session::has('mssg'))
-    <div class="btn btn-success">
-      <?php  
-      echo Session::get('mssg')
-      ?>
-    </div>
-  @endif
-  </div>
   <div class="row justify-content-center">
     
     <div class="col-md-6 col-lg-4">
@@ -89,8 +80,8 @@
                 <input type="text" class="form-control" id="red-blood-cells" name="rbc"> --}}
                 <label for="sugar" class="form-label">Red Blood Cell</label>
                 <select class="form-control" id="rbc" name="rbc">
-                  <option value="normal">normal</option>
-                  <option value="abnormal">abnormal</option>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
                 </select>
               </div>
             </div>
@@ -98,15 +89,15 @@
               <div class="col-md-6">
                 <label for="pus-cell" class="form-label">Pus Cell</label>
                 <select name="pc" id="pc" class="form-control">
-                  <option value="normal">normal</option>
-                  <option value="abnormal">abnormal</option>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
                 </select>
               </div>
               <div class="col-md-6">
                 <label for="pes-cell-clumps" class="form-label">Pes Cell Clumps</label>
                 <select name="pcc" id="pcc" class="form-control">
-                  <option value="present">present</option>
-                  <option value="not_present">not_present</option>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
                 </select>
               </div>
             </div>
@@ -114,8 +105,8 @@
               <div class="col-md-6">
                 <label for="bacteria" class="form-label">Bacteria</label>
                 <select name="ba" id="ba" class="form-control">
-                  <option value="present">present</option>
-                  <option value="not_present">not_present</option>
+                  <option value="0">0</option>
+                  <option value="1">not_present</option>
                 </select>
               </div>
               <div class="col-md-6">
@@ -150,7 +141,7 @@
               </div>
               <div class="col-md-6">
                 <label for="sodium" class="form-label">Packed cell Volume</label>
-                <input type="number" class="form-control" id="packed-cell-volume" name="packed_cell_volumne">
+                <input type="number" class="form-control" id="packed-cell-volume" name="pcv">
               </div>
             </div>
             <div class="row">

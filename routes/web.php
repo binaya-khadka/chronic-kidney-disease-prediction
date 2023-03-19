@@ -59,14 +59,17 @@ Route::prefix('/admin/patient/')->name('admin.patient.')->middleware(['auth', 'i
 });
 
 Route::get('/analysis/create', [HomeController::class, 'analysis_create'])->name('analysis.create')->middleware(['auth']);
-Route::post('/analysis/store', [HomeController::class, 'analysis_store'])->name('analysis.store')->middleware(['auth']);
+// Route::post('/analysis/store', [HomeController::class, 'analysis_store'])->name('analysis.store')->middleware(['auth']);
+Route::post('/analysis/store', [PredictionController::class, 'predict'])->name('analysis.store')->middleware(['auth']);
+Route::get('/analysis/log', [HomeController::class, 'analysis_log'])->name('analysis.log')->middleware(['auth']);
+Route::post('/predict', [PredictionController::class, 'predict'])->name('predict');
+
 // Route::get('/anlaysis', [HomeController::class, 'analysis_index'])->name('analysis.index');
 
 
 Route::get('/analysis', [HomeController::class, 'analysis_show'])->name('analysis.show')->middleware(['auth']);
 Route::get('/', [HomeController::class, 'homepage'])->name('homepage')->middleware(['auth']);
 Route::get('/prediction', [HomeController::class, 'prediction'])->name('prediction');
-Route::post('/predict', [PredictionController::class, 'predict'])->name('predict');
 Route::get('/frontend/aboutus', [HomeController::class, 'aboutUs'])->name('Frontend.aboutus');
 Route::get('/frontend/contactus', [HomeController::class, 'contactUs'])->name('Frontend.contactus');
 

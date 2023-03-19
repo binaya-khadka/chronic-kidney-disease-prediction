@@ -25,7 +25,7 @@ class Analysis extends Model
         'sod',
         'pot',
         'hemo',
-        'packed_cell_volumne',
+        'pcv',
         'wc',
         'rc',
         'htn',
