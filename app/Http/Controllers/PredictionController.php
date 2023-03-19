@@ -27,11 +27,7 @@ class PredictionController extends Controller
     $a->sod = $request->sod;
     $a->pot = $request->pot;
     $a->hemo = $request->hemo;
-
-    // packed_cell_volumne
-    // $a->packed_cell_volumne = $request->packed_cell_volumne;
     $a->pcv = $request->pcv;
-
     $a->wc = $request->wc;
     $a->rc = $request->rc;
     $a->htn = $request->htn;
@@ -40,53 +36,41 @@ class PredictionController extends Controller
     $a->appet = $request->appet;
     $a->pe = $request->pe;
     $a->ane = $request->ane;
-    $a->save();
 
-
-    // $store_in_database = Analysis::create($request->all());
-    // $store_in_database;
-    // dd($store_in_database);
-    return redirect()->route('analysis.log')->with('mssg', 'Successfully Stored The Data');
-
-    // dd($analysis);
-    $age = 50;
-    $bp = 80;
-    $sg = 1.015;
-    $al = 0;
-    $su = 1;
-    $rbc = 1;
-    $pc = 0;
-    $pcc = 0;
-    $ba = 0;
-    $bgr = 219;
-    $bu = 176;
-    $sc = 13.8;
-    $sod = 136;
-    $pot = 4.5;
-    $hemo = 8.6;
-    $pcv = 24;
-    $wc = 13200;
-    $rc = 2.7;
-    $htn = 1;
-    $dm = 0;
-    $cad = 0;
-    $appet = 0;
-    $pe = 1;
-    $ane = 1;
-
+    $age = $a->age ;
+    $bp = $a->bp ;
+    $sg = $a->sg ;
+    $al = $a->al ;
+    $su = $a->su ;
+    $rbc = $a->rbc ;
+    $pc = $a->pc ;
+    $pcc = $a->pcc ;
+    $ba = $a->ba ;
+    $bgr = $a->bgr ;
+    $bu = $a->bu ;
+    $sc = $a->sc ;
+    $sod = $a->sod ;
+    $pot = $a->pot ;
+    $hemo = $a->hemo ;
+    $pcv = $a->pcv ;
+    $wc = $a->wc ;
+    $rc = $a->rc ;
+    $htn = $a->htn ;
+    $dm = $a->dm ;
+    $cad = $a->cad ;
+    $appet = $a->appet ;
+    $pe = $a->pe ;
+    $ane = $a->ane ;
+    
     // Pass the form data as arguments to the Python script
     $scriptPath = base_path('app/Pickles/script3.py');
     $command = "python $scriptPath $age $bp $sg $al $su $rbc $pc $pcc $ba $bgr $bu $sc $sod $pot $hemo $pcv $wc $rc $htn $dm $cad $appet $pe $ane ";
     $output = shell_exec($command);
+    $a->class = intval($output);
     // echo "output is : " . $output;
-
-    // worked
-    // $scriptPath = base_path('app/Pickles/scripts.py');
-    // $command = "python $scriptPath ";
-    // $output = shell_exec($command);
-    // echo "output ithe s : " . $output;
+    $a->save();
 
     // Display the output in the frontend
-    return view('Frontend.predictionResult', ['output' => $output]);
-  }
+    return redirect()->route('analysis.log')->with('mssg', 'Successfully Stored The Data');
+}
 }
