@@ -9,7 +9,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" href="">Analysis Page</a>
+          <a class="nav-link" href="{{ route('analysis.create') }}">Analysis Page</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{route('analysis.show')}}">Analysis Log</a>
@@ -22,6 +22,20 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{route('Frontend.contactus')}}">Contact Us</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="">
+      <ul style="list-style:none;">
+        <li class="nav-item dropdown">
+          <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+              {{ __('Logout') }}
+          </a>
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+              @csrf
+          </form>
         </li>
       </ul>
     </div>

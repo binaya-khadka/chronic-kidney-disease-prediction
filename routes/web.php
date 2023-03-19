@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,39 +16,39 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+// Route::group(['middleware' => 'auth'], function () {
+//     Route::prefix('/admin')->name('admin.')->group(function () {
+
+//     });
+// });
+
 Route::get('/admin/dashboard', function () {
     return view('Backend.index');
-});
+})->middleware(['auth', 'isAdmin']);
 
 
 Route::get('/home', function () {
     return view('Frontend.index');
 });
 
-Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+Route::get('/admin', [AdminController::class, 'index'])->name('admin')->middleware(['auth', 'isAdmin']);
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\Backend\AdminController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\Backend\AdminController::class, 'index'])->name('home')->middleware(['auth', 'isAdmin']);
 
+// Testing...
+// Route::prefix('/homepage/patient')->name('homepage.patient.')->group(function () {
+//     Route::get('/register', [HomeController::class, 'register'])->name('register');
+//     Route::post('/register', [HomeController::class, 'register_store'])->name('register.store');
+//     Route::get('/login', [HomeController::class, 'login'])->name('login');
+//     Route::post('/login', [HomeController::class, 'login_patient'])->name('login.patient');
+// });
 
-// Route::get('/homepage/register', [HomeController::class, 'register'])->name('homepage.register');
-// Route::post('/homepage/register', [HomeController::class, 'register_store'])->name('homepage.register.store');
-
-Route::prefix('/homepage/patient')->name('homepage.patient.')->group(function () {
-    Route::get('/register', [HomeController::class, 'register'])->name('register');
-    Route::post('/register', [HomeController::class, 'register_store'])->name('register.store');
-    Route::get('/login', [HomeController::class, 'login'])->name('login');
-    Route::post('/login', [HomeController::class, 'login_patient'])->name('login.patient');
-});
-
-Route::prefix('/admin/patient/')->name('admin.patient.')->group(function () {
-
-
+Route::prefix('/admin/patient/')->name('admin.patient.')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('/report', [AdminController::class, 'patient_report'])->name('report');
     Route::get('/report/{id}', [AdminController::class, 'patient_report_show'])->name('report.show');
-
-
     Route::get('index', [AdminController::class, 'patient_index'])->name('index');
     Route::get('show/{id}', [AdminController::class, 'patient_show'])->name('show');
     Route::delete('{id}', [AdminController::class, 'patient_delete'])->name('delete');
@@ -56,13 +57,12 @@ Route::prefix('/admin/patient/')->name('admin.patient.')->group(function () {
     Route::get('trashed/restore/{id}', [AdminController::class, 'patient_trash_record_restore'])->name('trashed.restore');
 });
 
-Route::get('/analysis/create', [HomeController::class, 'analysis_create'])->name('analysis.create');
-Route::post('/analysis/store', [HomeController::class, 'analysis_store'])->name('analysis.store');
+Route::get('/analysis/create', [HomeController::class, 'analysis_create'])->name('analysis.create')->middleware(['auth']);
+Route::post('/analysis/store', [HomeController::class, 'analysis_store'])->name('analysis.store')->middleware(['auth']);
 // Route::get('/anlaysis', [HomeController::class, 'analysis_index'])->name('analysis.index');
 
-Route::get('/analysis', [HomeController::class, 'analysis_show'])->name('analysis.show');
-Route::get('/', [HomeController::class, 'homepage'])->name('homepage');
-
+Route::get('/analysis', [HomeController::class, 'analysis_show'])->name('analysis.show')->middleware(['auth']);
+Route::get('/', [HomeController::class, 'homepage'])->name('homepage')->middleware(['auth']);
 Route::get('/frontend/aboutus', [HomeController::class, 'aboutUs'])->name('Frontend.aboutus');
 Route::get('/frontend/contactus', [HomeController::class, 'contactUs'])->name('Frontend.contactus');
 

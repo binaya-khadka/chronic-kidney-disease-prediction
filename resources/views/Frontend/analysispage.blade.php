@@ -2,20 +2,31 @@
 
 @section('content')
 <div class="container">
+  <div class="" style="margin-top: 6rem;">
+    @if (Session::has('mssg'))
+    <div class="btn btn-success">
+      <?php  
+      echo Session::get('mssg')
+      ?>
+    </div>
+  @endif
+  </div>
   <div class="row justify-content-center">
+    
     <div class="col-md-6 col-lg-4">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title text-center mb-4">Analysis Form</h5>          
+          <h5 class="card-title text-center mb-4">Analysis Form</h5>
           <form action="{{route('analysis.store')}}" method="POST">
             {{ csrf_field() }}
 
-            <select name="patient_id" id="patient_id">
+            {{-- <select name="patient_id" id="patient_id">
               @foreach ($patient_id as $item)
               <option value="{{$item->id}}">{{$item->name}}</option>
               @endforeach
-            </select>
-          
+            </select> --}}
+            <div class="btn btn-success">{{auth()->user()->name}}</div>
+            <input type="hidden" name="patient_id" id="patient_id" value="{{auth()->user()->id}}">
             <div class="row">
               <div class="col-md-6">
                 <label for="fever" class="form-label">Age</label>

@@ -60,8 +60,7 @@ class HomeController extends Controller
     {
         $store_in_database = Analysis::create($req->all());
         $store_in_database;
-        return redirect()->route('analysis.create');
-        // return Redirect::back()->with('message', 'successful');
+        return redirect()->route('analysis.create')->with('mssg', 'Successfully Stored The Data');
     }
     public function analysis_show()
     {
