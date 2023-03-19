@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Analysis;
+use App\Models\Contactus;
 use App\Models\Patient;
 use Illuminate\Http\Request;
 
@@ -110,5 +111,12 @@ class AdminController extends Controller
     // dd($report->age);
     // dd($report->class);
     return view('Backend.Patient.showReport', compact('report'));
+  }
+
+
+  public function contactIndex()
+  {
+    $contact = Contactus::all();
+    return view('Backend.contactus', compact('contact'));
   }
 }

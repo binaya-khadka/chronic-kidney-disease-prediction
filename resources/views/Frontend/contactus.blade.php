@@ -23,21 +23,22 @@
     </div>
     <hr>
     <h3>Feedback Form</h3>
-    <form>
+    <form method="POST" action="{{route('frontend.contactus.store')}}">
+      @csrf
       <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" class="form-control" id="name" placeholder="Enter your name">
+        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
       </div>
       <div class="form-group">
         <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" placeholder="Enter your email">
+        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
       </div>
       <div class="form-group">
         <label for="message">Message</label>
-        <textarea class="form-control" id="message" rows="3"></textarea>
+        <textarea class="form-control" id="message" name="message" rows="3"></textarea>
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
-      <button type="reset" class="btn btn-danger">Clear</button>
+      {{-- <button type="reset" class="btn btn-danger">Clear</button> --}}
     </form>
   </div>
 </div>

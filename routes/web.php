@@ -73,6 +73,8 @@ Route::get('/prediction', [HomeController::class, 'prediction'])->name('predicti
 Route::get('/frontend/aboutus', [HomeController::class, 'aboutUs'])->name('Frontend.aboutus');
 Route::get('/frontend/contactus', [HomeController::class, 'contactUs'])->name('Frontend.contactus');
 
+Route::post('/frontend/contactus', [HomeController::class, 'contactusStore'])->name('frontend.contactus.store');
+
 // Route::get('/admin/patient/index', [AdminController::class, 'patient_index'])->name('admin.patient.index');
 // Route::get('/admin/patient/show/{id}', [AdminController::class, 'patient_show'])->name('admin.patient.show');
 // Route::delete('/admin/patient/{id}', [AdminController::class, 'patient_delete'])->name('admin.patient.delete');
@@ -80,3 +82,6 @@ Route::get('/frontend/contactus', [HomeController::class, 'contactUs'])->name('F
 // Route::get('/admin/patient/trashed', [AdminController::class, 'patient_trash_store'])->name('admin.patient.trashed');
 // Route::delete('/admin/patient/trashed/{id}', [AdminController::class, 'patient_trash_force_delete'])->name('admin.patient.trashed.delete');
 // Route::get('/admin/patient/trashed/restore/{id}', [AdminController::class, 'patient_trash_record_restore'])->name('admin.patient.trashed.restore');
+
+
+Route::get('/admin/contactus', [AdminController::class, 'contactIndex'])->name('contact.index')->middleware(['auth', 'isAdmin']);
