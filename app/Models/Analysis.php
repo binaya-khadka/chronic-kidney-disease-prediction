@@ -37,8 +37,8 @@ class Analysis extends Model
         // 'class'
     ];
 
-    public function patients()
+    public function users()
     {
-        return $this->belongsTo(Patient::class, 'id');
+        return $this->belongsTo(User::class, 'id');
     }
 }
