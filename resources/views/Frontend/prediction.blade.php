@@ -5,7 +5,8 @@
 </head>
 <body>
 <h1>CKD Prediction</h1>
-<form action="/predict" method="POST">
+<form action="{{ route('predict') }}" method="POST">
+    @csrf
     <div class="row">
       <div class="col-md-6">
         <label for="fever" class="form-label">Age</label>

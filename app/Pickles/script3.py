@@ -1,6 +1,7 @@
 import pickle
 import numpy as np
 import pandas as pd
+import os
 
 def gaussian_pdf(x, mean, std):
     """Compute the probability density function of a Gaussian distribution"""
@@ -31,7 +32,8 @@ class GaussianNaiveBayes:
 
 
 # Load the saved model from a pickle file
-with open('CKD_Model_v4.pkl', 'rb') as f:
+model_file_path = os.path.join(os.path.dirname(__file__), 'CKD_Model_v4.pkl')
+with open(model_file_path, 'rb') as f:
     model = pickle.load(f)
 
 # Take input from the user
@@ -89,11 +91,11 @@ with open('CKD_Model_v4.pkl', 'rb') as f:
 # X = np.array([[age, bp, sg, al, su, rbc, pc, pcc, ba, bgr, bu, sc, sod, pot, hemo, pcv, wc, rc, htn, dm, cad, appet, pe, ane]])
 # X = np.array([[50, 80, 1.015, 0, 1, 1, 0, 0, 0,  219, 176, 13.8, 136, 4.5, 8.6, 24, 13200, 2.7, 1, 0, 0, 0, 1,1]])
 
-X = pd.DataFrame([[50, 80, 1.015, 0, 1, 1, 0, 0, 0,  219, 176, 13.8, 136, 4.5, 8.6, 24, 13200, 2.7, 1, 0, 0, 0, 1,1]])
+X = pd.DataFrame([[58.0,80.0,1.025,0.0,0.0,1,1,0,0,131.0,18.0,1.1,141.0,3.5,15.8,53.0,6800.0,6.1,0,0,0,0,0,0]])
 
-print(X)
+# print(X)
 y_pred = model.predict(X)
 
 # Give output
-print("Predicted Class: ", y_pred)
+print( y_pred[0])
 
