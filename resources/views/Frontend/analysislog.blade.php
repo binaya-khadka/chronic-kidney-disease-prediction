@@ -23,9 +23,21 @@
         @foreach ($user_data as $user)
             <h5 class="card-header">Report {{ $loop->iteration }} </h5>
             <div class="card-body">
-                <h5 class="card-title">CKD</h5>
-                <p class="card-text">Symptpms</p>
-                <a href="#" class="btn btn-primary">View Details</a>
+                <h5 class="card-title">Result</h5>
+                
+                <p class="card-text text-danger" style="font-weight: 700;">
+                    <?php 
+                        $x = $user->class;
+                    ?>
+                    @if ($x == 1)
+                        CKD
+                    @elseif ($x == NULL)
+                        Result NOT Found
+                    @else 
+                        NOT_CKD
+                    @endif
+                </p>
+                {{-- <a href="#" class="btn btn-primary">View Details</a> --}}
                 {{-- <a href="#" class="btn btn-danger">Remove</a> --}}
             </div>
         @endforeach

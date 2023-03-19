@@ -21,15 +21,10 @@ return new class extends Migration
       $table->enum('sg', [1.005, 1.010, 1.015, 1.020, 1.025])->default(1.020);
       $table->enum('al', [0, 1, 2, 3, 4, 5])->default(0);
       $table->enum('su', [0, 1, 2, 3, 4, 5])->default(0);
-      // $table->enum('rbc', ['normal', 'abnormal'])->nullable();
       $table->boolean('rbc')->default(true);
-      // $table->enum('pc', ['normal', 'abnormal'])->nullable();
       $table->boolean('pc')->default(true);
-      // $table->enum('pcc', ['present', 'not_present'])->nullable();
       $table->boolean('pcc')->default(false);
-      // $table->enum('ba', ['present', 'not_present'])->nullable();
       $table->boolean('ba')->default(false);
-
       $table->double('bgr')->default(148.5875);
       $table->double('bu')->default(56.523);
       $table->double('sc')->default(3.051875);
@@ -39,31 +34,14 @@ return new class extends Migration
       $table->double('pcv')->default(38.805);
       $table->double('wc')->default(8360.5);
       $table->double('rc')->default(4.69775);
-      // $table->enum('htn', ['yes', 'no'])->nullable();
       $table->boolean('htn')->default(false);
-
-      // $table->enum('dm', ['yes', 'no'])->nullable();
       $table->boolean('dm')->default(false);
-
-
-
-      // $table->enum('cad', ['yes', 'no'])->nullable();
       $table->boolean('cad')->default(false);
-
-      // $table->enum('appet', ['good', 'poor'])->nullable();
       $table->boolean('appet')->default(false);
-
-
-      // $table->enum('pe', ['yes', 'no'])->nullable();
-      $table->boolean('pe')->default(false);
-
-      // $table->enum('ane', ['yes', 'no'])->nullable();
-      $table->boolean('ane')->default(false);
-
-
-      // $table->enum('class', ['ckd', 'not_ckd'])->nullable();
-      $table->boolean('class')->nullable();
-
+      $table->enum('pe', ['yes', 'no'])->nullable();
+      $table->boolean('pcc')->default(false);
+      $table->enum('ane', ['yes', 'no'])->nullable();
+      $table->enum('class', ['ckd', 'not_ckd'])->nullable();
       $table->foreign('patient_id')->references('id')->on('users');
       $table->timestamps();
     });

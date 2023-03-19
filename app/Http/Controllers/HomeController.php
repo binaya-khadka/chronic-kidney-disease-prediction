@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Analysis;
+use App\Models\Contactus;
 use App\Models\Patient;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -87,5 +88,17 @@ class HomeController extends Controller
     public function contactUs()
     {
         return view('Frontend.contactus');
+    }
+
+
+    public function contactusStore(Request $request)
+    {
+        // dd($request);
+        $contact = new Contactus();
+        $contact->name = $request->name;
+        $contact->email = $request->email;
+        $contact->message = $request->message;
+        $contact->save();
+        return redirect()->back()->with('message', 'Data Send Successfully');
     }
 }
