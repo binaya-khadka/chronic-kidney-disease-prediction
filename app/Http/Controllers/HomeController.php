@@ -75,7 +75,7 @@ class HomeController extends Controller
 
     public function prediction(){
         return view('Frontend.prediction');
-
+    }
     public function aboutUs()
     {
         return view('Frontend.aboutus');
@@ -85,4 +85,5 @@ class HomeController extends Controller
     {
         return view('Frontend.contactus');
     }
+    
 }

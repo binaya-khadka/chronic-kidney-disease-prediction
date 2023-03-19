@@ -2,17 +2,38 @@
 
 namespace App\Http\Controllers;
 
+use Symfony\Component\Process\Process;
 use Illuminate\Http\Request;
 
 class PredictionController extends Controller
 {
+    // public function predict(Request $request)
+    // {
+
+    //     $input = $request->all();
+    //     $scriptPath = base_path('app/Pickles/script3.py');
+    //     $process = new Process(["python", $scriptPath, $input]);
+    //     $process->run();
+
+    //     if (!$process->isSuccessful()) {
+    //         return response()->json([
+    //             'error' => 'Prediction failed',
+    //             'message' => $process->getErrorOutput(),
+    //         ], 500);
+    //      }
+
+    //     $prediction = trim($process->getOutput());
+    //     return response()->json([
+    //         'prediction' => $prediction,
+    //     ]);
+    // }
     public function predict()
     {
         // Load the form data into variables
         $age = 50;
         $bp = 80;
         $sg = 1.015;
-        $al = 0;    
+        $al = 0;
         $su = 1;
         $rbc = 1;
         $pc = 0;
@@ -35,10 +56,20 @@ class PredictionController extends Controller
         $ane = 1;
 
         // Pass the form data as arguments to the Python script
-        $command = "python3 /app/Pickles/script3.py $age $bp $sg $al $su $rbc $pc $pcc $ba $bgr $bu $sc $sod $pot $hemo $pcv $wc $rc $htn $dm $cad $appet $pe $ane 2>&1";
+        $scriptPath = base_path('app/Pickles/script3.py');
+        $command = "python $scriptPath $age $bp $sg $al $su $rbc $pc $pcc $ba $bgr $bu $sc $sod $pot $hemo $pcv $wc $rc $htn $dm $cad $appet $pe $ane ";
         $output = shell_exec($command);
+        // echo "output is : " . $output;
 
+        // worked
+        // $scriptPath = base_path('app/Pickles/scripts.py');
+        // $command = "python $scriptPath ";
+        // $output = shell_exec($command);
+        // echo "output ithe s : " . $output;
+
+        
+        
         // Display the output in the frontend
-        return view('prediction', ['output' => $output]);
+        return view('Frontend.predictionResult', ['output' => $output]);
     }
 }

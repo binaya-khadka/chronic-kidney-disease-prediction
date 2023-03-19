@@ -9,7 +9,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" href="">Analysis Page</a>
+          <a class="nav-link" href="{{route('Frontend.analysispage')}}">Analysis Page</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{route('analysis.show')}}">Analysis Log</a>
