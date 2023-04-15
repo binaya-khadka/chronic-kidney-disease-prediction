@@ -41,7 +41,7 @@ return new class extends Migration
       $table->enum('pe', ['yes', 'no'])->nullable();
       // $table->boolean('pcc')->default(false);
       $table->enum('ane', ['yes', 'no'])->nullable();
-      // $table->enum('class', ['ckd', 'not_ckd'])->nullable();
+      $table->enum('class', ['ckd', 'not_ckd'])->nullable();
       $table->foreign('patient_id')->references('id')->on('users');
       $table->timestamps();
     });
