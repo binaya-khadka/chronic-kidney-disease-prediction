@@ -85,3 +85,5 @@ Route::post('/frontend/contactus', [HomeController::class, 'contactusStore'])->n
 
 
 Route::get('/admin/contactus', [AdminController::class, 'contactIndex'])->name('contact.index')->middleware(['auth', 'isAdmin']);
+// user profile added here
+Route::get('/frontend/userprofile', [HomeController::class, 'userprofile'])->name('Frontend.userprofile');
