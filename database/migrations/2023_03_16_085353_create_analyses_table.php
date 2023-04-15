@@ -15,7 +15,7 @@ return new class extends Migration
   {
     Schema::create('analyses', function (Blueprint $table) {
       $table->increments('id');
-      $table->integer('age')->default(51.61);
+      $table->integer('age')->default(51);
       $table->integer('patient_id')->unsigned();
       $table->double('bp')->nullable();
       $table->enum('sg', [1.005, 1.010, 1.015, 1.020, 1.025])->default(1.020);
@@ -39,9 +39,9 @@ return new class extends Migration
       $table->boolean('cad')->default(false);
       $table->boolean('appet')->default(false);
       $table->enum('pe', ['yes', 'no'])->nullable();
-      $table->boolean('pcc')->default(false);
+      // $table->boolean('pcc')->default(false);
       $table->enum('ane', ['yes', 'no'])->nullable();
-      $table->enum('class', ['ckd', 'not_ckd'])->nullable();
+      // $table->enum('class', ['ckd', 'not_ckd'])->nullable();
       $table->foreign('patient_id')->references('id')->on('users');
       $table->timestamps();
     });
