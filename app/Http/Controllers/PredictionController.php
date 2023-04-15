@@ -37,7 +37,11 @@ class PredictionController extends Controller
     $a->pe = $request->pe;
     $a->ane = $request->ane;
 
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 375ec3f85ec5102ca21b06deb7f6adecb7c18b2a
     $age = $a->age;
     $bp = $a->bp;
     $sg = $a->sg;
