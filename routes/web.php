@@ -17,13 +17,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-// Route::group(['middleware' => 'auth'], function () {
-//     Route::prefix('/admin')->name('admin.')->group(function () {
-
-//     });
-// });
-
 Route::get('/admin/dashboard', function () {
     return view('Backend.index');
 })->middleware(['auth', 'isAdmin']);

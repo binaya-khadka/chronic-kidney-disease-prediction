@@ -93,7 +93,6 @@ class HomeController extends Controller
 
     public function contactusStore(Request $request)
     {
-        // dd($request);
         $contact = new Contactus();
         $contact->name = $request->name;
         $contact->email = $request->email;

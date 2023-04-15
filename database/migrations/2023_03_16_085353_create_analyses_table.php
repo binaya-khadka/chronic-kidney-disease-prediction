@@ -23,7 +23,7 @@ return new class extends Migration
       $table->enum('su', [0, 1, 2, 3, 4, 5])->default(0);
       $table->boolean('rbc')->default(true);
       $table->boolean('pc')->default(true);
-      $table->boolean('pcc')->default(false);
+      // $table->boolean('pcc')->default(false);
       $table->boolean('ba')->default(false);
       $table->double('bgr')->default(148.5875);
       $table->double('bu')->default(56.523);
@@ -41,7 +41,8 @@ return new class extends Migration
       $table->enum('pe', ['yes', 'no'])->nullable();
       $table->boolean('pcc')->default(false);
       $table->enum('ane', ['yes', 'no'])->nullable();
-      $table->enum('class', ['ckd', 'not_ckd'])->nullable();
+      // $table->enum('class', ['ckd', 'not_ckd'])->nullable();
+      $table->integer('class');
       $table->foreign('patient_id')->references('id')->on('users');
       $table->timestamps();
     });

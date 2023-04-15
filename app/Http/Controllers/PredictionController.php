@@ -36,6 +36,8 @@ class PredictionController extends Controller
     $a->appet = $request->appet;
     $a->pe = $request->pe;
     $a->ane = $request->ane;
+
+
     $age = $a->age;
     $bp = $a->bp;
     $sg = $a->sg;
@@ -65,8 +67,9 @@ class PredictionController extends Controller
     $scriptPath = base_path('app/Pickles/script3.py');
     $command = "python $scriptPath $age $bp $sg $al $su $rbc $pc $pcc $ba $bgr $bu $sc $sod $pot $hemo $pcv $wc $rc $htn $dm $cad $appet $pe $ane ";
     $output = shell_exec($command);
-    $a->class = intval($output);
-    // echo "output is : " . $output;
+    $result = intval($output);
+
+    $a->class = $result;
     $a->save();
 
     // Display the output in the frontend

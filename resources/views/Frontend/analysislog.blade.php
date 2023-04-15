@@ -29,12 +29,12 @@
                     <?php 
                         $x = $user->class;
                     ?>
-                    @if ($x == 1)
+                    @if ($x == 0)
                         CKD
-                    @elseif ($x == NULL)
-                        Result NOT Found
-                    @else 
+                    @elseif ($x == 1)
                         NOT_CKD
+                    @else 
+                        RESULT NOT FOUND
                     @endif
                 </p>
                 {{-- <a href="#" class="btn btn-primary">View Details</a> --}}
