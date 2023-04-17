@@ -1,5 +1,7 @@
 @extends('Frontend.Layouts.app')
 
+@section('title', 'Analysis Form')
+
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
@@ -10,14 +12,13 @@
                         <h5 class="card-title text-center mb-4">Analysis Form</h5>
                         <form action="{{ route('analysis.store') }}" method="POST">
                             {{ csrf_field() }}
-
-                            {{-- <select name="patient_id" id="patient_id">
-              @foreach ($patient_id as $item)
-              <option value="{{$item->id}}">{{$item->name}}</option>
-              @endforeach
-            </select> --}}
+                                {{-- <select name="patient_id" id="patient_id">
+                                @foreach ($patient_id as $item)
+                                <option value="{{$item->id}}">{{$item->name}}</option>
+                                @endforeach
+                                </select> --}}
                             <div class="btn btn-success">{{ auth()->user()->name }}</div>
-                            <input type="hidden" name="patient_id" id="patient_id" value="{{ auth()->user()->id }}">
+                            <input type="hidden" name="user_id" id="user_id" value="{{ auth()->user()->id }}">
                             <div class="row">
                                 <div class="col-md-6">
                                     <label for="fever" class="form-label">Age</label>

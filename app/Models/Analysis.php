@@ -9,7 +9,7 @@ class Analysis extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'patient_id',
+        'user_id',
         'age',
         'bp',
         'sg',
@@ -39,6 +39,6 @@ class Analysis extends Model
 
     public function users()
     {
-        return $this->belongsTo(User::class, 'id');
+        return $this->belongsTo(User::class, 'user_id');
     }
 }
