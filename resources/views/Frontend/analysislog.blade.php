@@ -3,46 +3,100 @@
 @section('title', 'Analysis Log')
 
 @section('content')
-<div class="container">
-    <div class="card" style="margin-top:5rem; border: none; outline: none;">
-        <h1>
-            Anlaysis Log
-        </h1>
-    </div>
+    <div class="container">
+        <div class="card" style="margin-top:5rem; border: none; outline: none;">
+            <h1>
+                Anlaysis Log
+            </h1>
+        </div>
+        {{-- toaster message section  --}}
 
-    <div class="row">
-        <div class="" style="margin-top: 1rem;">
-            @if (Session::has('mssg'))
-            <div class="btn btn-success">
-              <?php  
-              echo Session::get('mssg')
-              ?>
+        <div class="row">
+            <div class="" style="margin-top: 1rem;">
+                @if (Session::has('mssg'))
+                    <div class="btn btn-success" id="success-message">
+                        <?php
+                        echo Session::get('mssg');
+                        ?>
+                    </div>
+                @endif
             </div>
-            @endif
-          </div>    
-    </div>
-    <div class="card" style="gap: 10px;">
-        @foreach ($user_data as $user)
-            <h5 class="card-header">Report {{ $loop->iteration }} </h5>
-            <div class="card-body">
-                <h5 class="card-title">Result</h5>
-                
-                <p class="card-text text-danger" style="font-weight: 700;">
-                    <?php 
+        </div>
+
+        <style>
+            /* Add a transition to the opacity property */
+            #success-message {
+                transition: opacity 0.5s ease-in-out;
+            }
+
+            /* Set the opacity to 0 when the message is hidden */
+            #success-message.hidden {
+                opacity: 0;
+            }
+        </style>
+
+        <script>
+            setTimeout(function() {
+                var successMessage = document.getElementById('success-message');
+                if (successMessage) {
+                    successMessage.classList.add('hidden'); // Add the 'hidden' class to trigger the fade-out effect
+                    setTimeout(function() {
+                        successMessage.remove();
+                    }, 500); // Wait for the transition to complete before removing the message from the DOM
+                }
+            }, 5000); // 5000ms = 5 seconds
+        </script>
+        {{-- message section ends --}}
+
+        <div class="card" style="gap: 10px;">
+            @foreach ($user_data as $user)
+                <h5 class="card-header">Report {{ $loop->iteration }} </h5>
+                <div class="card-body">
+                    <h5 class="card-title">Result</h5>
+
+                    <p class="card-text text-danger" style="font-weight: 700;">
+                        <?php
                         $x = $user->class;
-                    ?>
-                    @if ($x == 0)
-                        CKD
-                    @elseif ($x == 1)
-                        NOT_CKD
-                    @else 
-                        RESULT NOT FOUND
-                    @endif
-                </p>
-                {{-- <a href="#" class="btn btn-primary">View Details</a> --}}
-                {{-- <a href="#" class="btn btn-danger">Remove</a> --}}
-            </div>
-        @endforeach
+                        ?>
+                        @if ($x == 0)
+                            CKD
+                        @elseif ($x == 1)
+                            NOT_CKD
+                        @else
+                            RESULT NOT FOUND
+                        @endif
+                    </p>
+                    {{-- added code --}}
+                    <span class="card-text" style="font-size: small;">Age: {{ $user->age }},</span>
+                    <span class="card-text" style="font-size: small;">Blood Pressure: {{ $user->bp }},</span>
+                    <span class="card-text" style="font-size: small;">Specific Gravity: {{ $user->sg }},</span>
+                    <span class="card-text" style="font-size: small;">Albumin: {{ $user->al }},</span>
+                    <span class="card-text" style="font-size: small;">Sugar: {{ $user->su }},</span>
+                    <span class="card-text" style="font-size: small;">Red Blood Cells: {{ $user->rbc }},</span>
+                    <span class="card-text" style="font-size: small;">Pus Cell: {{ $user->pc }},</span>
+                    <span class="card-text" style="font-size: small;">Pus Cell Clumps: {{ $user->pcc }},</span>
+                    <span class="card-text" style="font-size: small;">Bacteria: {{ $user->ba }},</span>
+                    <span class="card-text" style="font-size: small;">Blood Glucose Random: {{ $user->bgr }},</span>
+                    <span class="card-text" style="font-size: small;">Blood Urea: {{ $user->bu }},</span>
+                    <span class="card-text" style="font-size: small;">Serum Creatinine: {{ $user->sc }},</span>
+                    <span class="card-text" style="font-size: small;">Sodium: {{ $user->sod }},</span>
+                    <span class="card-text" style="font-size: small;">Potassium: {{ $user->pot }},</span>
+                    <span class="card-text" style="font-size: small;">Hemoglobin: {{ $user->hemo }},</span>
+                    <span class="card-text" style="font-size: small;">Packed Cell Volume: {{ $user->pcv }},</span>
+                    <span class="card-text" style="font-size: small;">White Blood Cell Count: {{ $user->wc }},</span>
+                    <span class="card-text" style="font-size: small;">Hypertension: {{ $user->rc }},</span>
+                    <span class="card-text" style="font-size: small;">Diabetes Mellitus: {{ $user->dm }},</span>
+                    <span class="card-text" style="font-size: small;">Coronary Artery Disease: {{ $user->cad }},</span>
+                    <span class="card-text" style="font-size: small;">Appetite: {{ $user->appet }},</span>
+                    <span class="card-text" style="font-size: small;">Pedal Edema: {{ $user->pe }},</span>
+                    <span class="card-text" style="font-size: small;">Anemia: {{ $user->ane }}</span>
+
+
+                    
+                    {{-- <a href="#" class="btn btn-primary">View Details</a> --}}
+                    {{-- <a href="#" class="btn btn-danger">Remove</a> --}}
+                </div>
+            @endforeach
+        </div>
     </div>
-</div>
 @endsection
