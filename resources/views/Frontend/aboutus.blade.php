@@ -6,7 +6,7 @@
         <div class="col-md-6">
             <h2 class="b-title">About this Project</h2>
             <hr>
-            <p class="b-subtitle" style="line-height:1.5rem; font-size: 1.115rem;">
+            <p class="b-subtitle taj" style="line-height:1.5rem; font-size: 1.115rem;">
                 The chronic disease prediction system is a web-based application created using Laravel, 
                 a popular PHP framework. This system is designed to predict the likelihood of chronic diseases such as heart disease, 
                 diabetes. The prediction algorithm is based on Naive Bayes, a probabilistic algorithm 

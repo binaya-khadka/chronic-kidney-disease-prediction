@@ -1,5 +1,7 @@
 @extends('Frontend.Layouts.app')
 
+@section('title', 'Analysis Log')
+
 @section('content')
 <div class="container">
     <div class="card" style="margin-top:5rem; border: none; outline: none;">
