@@ -32,14 +32,6 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\Backend\AdminController::class, 'index'])->name('home')->middleware(['auth', 'isAdmin']);
 
-// Testing...
-// Route::prefix('/homepage/patient')->name('homepage.patient.')->group(function () {
-//     Route::get('/register', [HomeController::class, 'register'])->name('register');
-//     Route::post('/register', [HomeController::class, 'register_store'])->name('register.store');
-//     Route::get('/login', [HomeController::class, 'login'])->name('login');
-//     Route::post('/login', [HomeController::class, 'login_patient'])->name('login.patient');
-// });
-
 Route::prefix('/admin/patient/')->name('admin.patient.')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('/report', [AdminController::class, 'patient_report'])->name('report');
     Route::get('/report/{id}', [AdminController::class, 'patient_report_show'])->name('report.show');
