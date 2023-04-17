@@ -12,7 +12,7 @@ class PredictionController extends Controller
   {
     $a = new Analysis;
     $a->age = $request->age;
-    $a->user_id = $request->user_id;
+    $a->patient_id = $request->patient_id;
     $a->bp = $request->bp;
     $a->sg = $request->sg;
     $a->al = $request->al;
