@@ -5,12 +5,11 @@
 @section('content')
     <div class="container">
         <div class="card" style="margin-top:5rem; border: none; outline: none;">
-            <h1>
+            <h1 style="font-family: 'Poppins', sans-serif;">
                 Anlaysis Log
             </h1>
         </div>
         {{-- toaster message section  --}}
-
         <div class="row">
             <div class="" style="margin-top: 1rem;">
                 @if (Session::has('mssg'))
@@ -91,8 +90,6 @@
                     <span class="card-text" style="font-size: small;">Pedal Edema: {{ $user->pe }},</span>
                     <span class="card-text" style="font-size: small;">Anemia: {{ $user->ane }}</span>
 
-
-                    
                     {{-- <a href="#" class="btn btn-primary">View Details</a> --}}
                     {{-- <a href="#" class="btn btn-danger">Remove</a> --}}
                 </div>

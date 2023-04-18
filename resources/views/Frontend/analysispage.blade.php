@@ -5,19 +5,13 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-
             <div class="col-md-6 col-lg-4">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title text-center mb-4">Analysis Form</h5>
                         <form action="{{ route('analysis.store') }}" method="POST">
                             {{ csrf_field() }}
-                                {{-- <select name="patient_id" id="patient_id">
-                                @foreach ($patient_id as $item)
-                                <option value="{{$item->id}}">{{$item->name}}</option>
-                                @endforeach
-                                </select> --}}
-                            <div class="btn btn-success">{{ auth()->user()->name }}</div>
+                            <div style="margin-bottom: 10px;" class="btn btn-success">{{ ucFirst(auth()->user()->name) }}</div>
                             <input type="hidden" name="user_id" id="user_id" value="{{ auth()->user()->id }}">
                             <div class="row">
                                 <div class="col-md-6">

@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Plus&family=Newsreader:opsz@6..72&family=Playfair+Display&family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
-
-
 :root {
     --df: flex;
     --dg: grid;
@@ -17,7 +15,29 @@
     --f-playfair: 'Playfair Display', serif;
     --f-poppins: 'Poppins', sans-serif;
     --f-lato: 'Lato', sans-serif;
+}
 
+p {
+    margin-bottom: 0.75rem;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding-bottom: 0;
+    padding-right: 0;
+    padding-left: 0;
+    padding-top: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul ol {
+    list-style: none;
+}
+
+svg {
+    margin-right: 10px;
 }
 
 .b-title {
@@ -54,4 +74,14 @@
 
 .tac {
     text-align: center;
+}
+
+.divider {
+    content: "";
+    display: block;
+    height: 2px;
+    background: #000;
+    width: 60px;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
