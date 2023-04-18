@@ -67,6 +67,12 @@
           ?>
         </span>
       </h3>
+      <h3 class="smallHeaderTitle">
+        Date: 
+        <span style="color: tomato; font-weight: 600;">
+          {{ (auth()->user()->analysis->first()->created_at->format('Y-m-d')) }}
+        </span>
+      </h3>
     </div>
 
   </div>
