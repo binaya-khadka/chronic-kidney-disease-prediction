@@ -38,9 +38,8 @@ return new class extends Migration
       $table->boolean('dm')->default(false);
       $table->boolean('cad')->default(false);
       $table->boolean('appet')->default(false);
-      $table->enum('pe', ['yes', 'no'])->nullable();
-      $table->enum('ane', ['yes', 'no'])->nullable();
-      // $table->enum('class', ['ckd', 'not_ckd'])->nullable();
+      $table->enum('pe', ['0', '1'])->defualt(0);
+      $table->enum('ane', ['0', '1'])->default(0);
       $table->integer('class');
       $table->foreign('user_id')->references('id')->on('users');
       $table->timestamps();
