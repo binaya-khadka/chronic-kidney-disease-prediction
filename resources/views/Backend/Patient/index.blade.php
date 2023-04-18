@@ -43,21 +43,19 @@
                   <td>
                     <a href="{{ route('admin.patient.show', $patient->id) }}" class="btn btn-success">Show</a>
                     <a href="{{ route('admin.patient.report.show', $patient->id) }}" class="btn btn-primary">Report</a>
-                    {{-- <form action="{{ route('admin.patient.delete', $patient->id) }}" method="POST"
+                    <form action="{{ route('admin.patient.delete', $patient->id) }}" method="POST"
                       style="display:inline-block">
                       @method("delete")
                       @csrf
                       <button type="submit" class="btn btn-danger">Delete</button>
-                    </form> --}}
+                    </form>
                   </td>
                 </tr>
                 @endforeach
               </tbody>
             </table>
           </div>
-
         </div>
-
       </div>
     </div>
   </div>
