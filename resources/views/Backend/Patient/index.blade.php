@@ -9,7 +9,6 @@
       <div class="col-sm-6">
         <h1>Patient Table</h1>
       </div>
-
     </div>
   </div>
 </section>
@@ -22,7 +21,6 @@
           <div class="card-header">
             <h3 class="card-title">Patient Details</h3>
           </div>
-
           <div class="card-body table-responsive p-0" style="height: auto;">
             @include('Backend.includes.flash_message')
             <table class="table table-head-fixed text-nowrap">
