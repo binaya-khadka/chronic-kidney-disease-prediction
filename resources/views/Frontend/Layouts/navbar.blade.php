@@ -19,11 +19,9 @@
           <a class="nav-link" href="{{route('Frontend.aboutus')}}">About Us</a>
         </li>
 
-        @if(!auth()->user())
-          <li class="nav-item">
-            <a class="nav-link" href="{{route('Frontend.contactus')}}">Contact Us</a>
-          </li>
-        @endif
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('Frontend.contactus')}}">Contact Us</a>
+        </li>
 
         @if(auth()->user())
           <li class="nav-item">

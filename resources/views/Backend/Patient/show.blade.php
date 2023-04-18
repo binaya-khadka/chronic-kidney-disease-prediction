@@ -1,4 +1,7 @@
 @extends('Backend.Layouts.app')
+@include('HelperFunction.function')
+
+@section('title', 'Patient Info')
 
 @section('content')
 
@@ -6,14 +9,8 @@
   <div class="container-fluid">
     <div class="row mb-2">
       <div class="col-sm-6">
-        <h1>Simple Tables</h1>
+        <h1></h1>
       </div>
-      {{-- <div class="col-sm-6">
-        <ol class="breadcrumb float-sm-right">
-          <li class="breadcrumb-item"><a href="#">Home</a></li>
-          <li class="breadcrumb-item active">Simple Tables</li>
-        </ol>
-      </div> --}}
     </div>
   </div>
 </section>
@@ -35,17 +32,21 @@
                 <td>{{$data['patient']->name}}</td>
               </tr>
               <tr>
-                <th>Age</th>
-                <td>{{$data['patient']->age}}</td>
-              </tr>
-              <tr>
                 <th>Email</th>
                 <td>{{$data['patient']->email}}</td>
               </tr>
               <tr>
-                <th>Phone</th>
-                <td>{{$data['patient']->phone}}</td>
+                <th>Total Number of Analysis</th>
+                <td>{{$analysis->count()}}</td>
               </tr>
+              @if($analysis->first())
+                <tr>
+                  <th>Latest Result</th>
+                  <td style="color: tomato; font-weight: 700;">
+                      {{ getClassLabel($analysis->first()->class) }}
+                  </td>
+                </tr>
+              @endif  
             </table>
           </div>
         </div>

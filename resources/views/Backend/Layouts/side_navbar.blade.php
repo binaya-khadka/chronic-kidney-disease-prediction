@@ -26,14 +26,6 @@
         </li>
 
         <li class="nav-item">
-          <a href="{{ route('contact.index') }}" class="nav-link">
-          <i class="nav-icon fa fa-address-book"></i>
-          <p>Contact Us</p>
-          </a>
-        </li>
-
-
-        {{-- <li class="nav-item">
           <a href="" class="nav-link">
             <i class="nav-icon fas fa-solid fa-user"></i>
             <p>Patients</p>
@@ -46,14 +38,21 @@
                 <p>Index</p>
               </a>
             </li>
-            <li class="nav-item">
+            {{-- <li class="nav-item">
               <a href="{{route('admin.patient.trashed')}}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Deleted</p>
               </a>
-            </li>
+            </li> --}}
           </ul>
-        </li> --}}
+        </li>
+
+        <li class="nav-item">
+          <a href="{{ route('contact.index') }}" class="nav-link">
+          <i class="nav-icon fa fa-address-book"></i>
+          <p>Contact Us</p>
+          </a>
+        </li>
       </ul>
     </nav>
 

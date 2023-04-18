@@ -29,31 +29,32 @@ class AdminController extends Controller
     return view('Backend.Patient.index', compact('patients'));
   }
 
-  // public function patient_show($id)
-  // {
-  //   $data['patient'] = Patient::find($id);
-  //   if (!$data['patient']) {
-  //     request()->session()->flash('error', 'Invalid Request');
-  //     return redirect()->route('admin.patient.index');
-  //   }
-  //   return view('Backend.Patient.show', compact('data'));
-  // }
+  public function patient_show($id)
+  {
+    $data['patient'] = User::find($id);
+    $analysis = Analysis::where('user_id', $id)->get();
+    if (!$data['patient']) {
+      request()->session()->flash('error', 'Invalid Request');
+      return redirect()->route('admin.patient.index');
+    }
+    return view('Backend.Patient.show', compact('data', 'analysis'));
+  }
 
 
-  // public function patient_delete($id)
-  // {
-  //   $data['patient'] = Patient::find($id);
-  //   if (!$data['patient']) {
-  //     request()->session()->flash('error', 'Invalid Request');
-  //     return redirect()->route('admin.patient.index');
-  //   }
-  //   if ($data['patient']->delete()) {
-  //     request()->session()->flash('success', 'Success');
-  //     return redirect()->route('admin.patient.index');
-  //   } else {
-  //     request()->session()->flash('error', 'Delete Failed');
-  //   }
-  // }
+  public function patient_delete($id)
+  {
+    $data['patient'] = User::find($id);
+    if (!$data['patient']) {
+      request()->session()->flash('error', 'Invalid Request');
+      return redirect()->route('admin.patient.index');
+    }
+    if ($data['patient']->delete()) {
+      request()->session()->flash('success', 'Success');
+      return redirect()->route('admin.patient.index');
+    } else {
+      request()->session()->flash('error', 'Delete Failed');
+    }
+  }
 
   // public function patient_trash_store()
   // {
@@ -63,7 +64,6 @@ class AdminController extends Controller
 
   // public function patient_trash_record_restore($id)
   // {
-
   //   $data['patient'] = Patient::withTrashed()->where('id', '=', $id);
   //   if (!$data['patient']) {
   //     request()->session()->flash('error', 'Invalid Request');
@@ -106,9 +106,7 @@ class AdminController extends Controller
   public function patient_report_show($id)
   {
     $user_id = $id;
-    $report = Analysis::where('user_id', '=', $user_id)->first();
-    // dd($report->age);
-    // dd($report->class);
+    $report['data'] = Analysis::where('user_id', '=', $user_id)->get()->firstOrFail();
     return view('Backend.Patient.showReport', compact('report'));
   }
 
