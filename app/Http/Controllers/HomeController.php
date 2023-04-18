@@ -92,6 +92,7 @@ class HomeController extends Controller
         $contact->save();
         return redirect()->back()->with('message', 'Data Send Successfully');
     }
+
     // user profile added
     public function userprofile()
     {

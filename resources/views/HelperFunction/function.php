@@ -4,9 +4,9 @@ function getClassLabel($class)
 {
   switch ($class) {
     case 0:
-      return "NOT CKD";
-    case 1:
       return "CKD";
+    case 1:
+      return "NOT CKD";
     default:
       return "Result Not Found";
   }
