@@ -1,4 +1,5 @@
 @extends('Frontend.Layouts.app')
+@include('HelperFunction.function')
 
 @section('title', 'Analysis Log')
 
@@ -85,12 +86,12 @@
                     <span class="card-text" style="font-size: small;">Packed Cell Volume: {{ $user->pcv }},</span>
                     <span class="card-text" style="font-size: small;">White Blood Cell Count: {{ $user->wc }},</span>
                     <span class="card-text" style="font-size: small;">Red Blood Cell Count: {{ $user->rc }},</span>
-                    <span class="card-text" style="font-size: small;">Hypertension: {{ $user->htn }},</span>
-                    <span class="card-text" style="font-size: small;">Diabetes Mellitus: {{ $user->dm }},</span>
-                    <span class="card-text" style="font-size: small;">Coronary Artery Disease: {{ $user->cad }},</span>
+                    <span class="card-text" style="font-size: small;">Hypertension: {{ getYesNoLabel($user->htn) }},</span>
+                    <span class="card-text" style="font-size: small;">Diabetes Mellitus: {{ getYesNoLabel($user->dm) }},</span>
+                    <span class="card-text" style="font-size: small;">Coronary Artery Disease: {{ getYesNoLabel($user->cad) }},</span>
                     <span class="card-text" style="font-size: small;">Appetite: {{ $user->appet }},</span>
-                    <span class="card-text" style="font-size: small;">Pedal Edema: {{ $user->pe }},</span>
-                    <span class="card-text" style="font-size: small;">Anemia: {{ $user->ane }}</span>
+                    <span class="card-text" style="font-size: small;">Pedal Edema: {{ getYesNoLabel($user->pe) }},</span>
+                    <span class="card-text" style="font-size: small;">Anemia: {{ getYesNoLabel($user->ane) }}</span>
 
                     {{-- <a href="#" class="btn btn-primary">View Details</a> --}}
                     {{-- <a href="#" class="btn btn-danger">Remove</a> --}}
