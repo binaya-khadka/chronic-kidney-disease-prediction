@@ -62,7 +62,7 @@ class PredictionController extends Controller
     $pe = $a->pe;
     $ane = $a->ane;
 
-    // Pass the form data as arguments to the Python script
+    /// Pass the form data as arguments to the Python script
     $scriptPath = base_path('app/Pickles/script3.py');
     $command = "python $scriptPath $age $bp $sg $al $su $rbc $pc $pcc $ba $bgr $bu $sc $sod $pot $hemo $pcv $wc $rc $htn $dm $cad $appet $pe $ane ";
     $output = shell_exec($command);

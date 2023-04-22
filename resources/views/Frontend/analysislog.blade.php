@@ -43,12 +43,13 @@
                         successMessage.remove();
                     }, 500); // Wait for the transition to complete before removing the message from the DOM
                 }
-            }, 5000); // 5000ms = 5 seconds
+            }, 1000); // 5000ms = 5 seconds
         </script>
         {{-- message section ends --}}
 
         <div class="card" style="gap: 10px;">
-            @foreach ($user_data as $user)
+            {{-- @foreach ($user_data as $user) --}}
+            @foreach ($user_data->reverse() as $user)
                 <h5 class="card-header">Report {{ $loop->iteration }} </h5>
                 <div class="card-body">
                     <h5 class="card-title">Result</h5>
@@ -58,9 +59,9 @@
                         $x = $user->class;
                         ?>
                         @if ($x == 0)
-                            CKD
+                            <span style="color: red;">CKD</span>
                         @elseif ($x == 1)
-                            NOT_CKD
+                            <span style="color: green;">NOT_CKD</span>
                         @else
                             RESULT NOT FOUND
                         @endif

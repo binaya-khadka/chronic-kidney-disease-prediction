@@ -58,6 +58,7 @@ Route::get('/prediction', [HomeController::class, 'prediction'])->name('predicti
 Route::get('/frontend/aboutus', [HomeController::class, 'aboutUs'])->name('Frontend.aboutus');
 Route::get('/frontend/contactus', [HomeController::class, 'contactUs'])->name('Frontend.contactus');
 
+
 Route::post('/frontend/contactus', [HomeController::class, 'contactusStore'])->name('frontend.contactus.store');
 
 // Route::get('/admin/patient/index', [AdminController::class, 'patient_index'])->name('admin.patient.index');
@@ -72,3 +73,6 @@ Route::post('/frontend/contactus', [HomeController::class, 'contactusStore'])->n
 Route::get('/admin/contactus', [AdminController::class, 'contactIndex'])->name('contact.index')->middleware(['auth', 'isAdmin']);
 // user profile added here
 Route::get('/frontend/userprofile', [HomeController::class, 'userprofile'])->name('Frontend.userprofile');
+
+// test
+Route::get('/frontend/predictionResult', [HomeController::class, 'predictionResult'])->name('Frontend.predictionResult');

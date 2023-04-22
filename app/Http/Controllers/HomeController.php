@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Validation\ValidationException;
+use PDO;
 
 class HomeController extends Controller
 {
@@ -97,4 +98,9 @@ class HomeController extends Controller
     {
         return view('Frontend.userprofile');
     }
+    // test
+    public function predictionResult(){
+        return view('Frontend.predictionResult');
+    }
 }
+

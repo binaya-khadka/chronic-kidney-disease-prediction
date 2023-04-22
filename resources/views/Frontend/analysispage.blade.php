@@ -24,7 +24,16 @@
                                 </div>
                             </div>
                             <div class="row">
-
+                                <div class="col-md-6">
+                                    <label for="specific-gravity">specific-gravity</label>
+                                    <select class="form-control" name="sg" id="sg">
+                                        <option value="1.005">1.005</option>
+                                        <option value="1.01">1.01</option>
+                                        <option value="1.015">1.015</option>
+                                        <option value="1.02" selected>1.02</option>
+                                        <option value="1.025">1.025</option>
+                                    </select>
+                                </div>
                                 <div class="col-md-6">
                                     <label for="albumin" class="form-label">Albumin</label>
                                     <select class="form-control" id="albumin" name="al">
@@ -34,18 +43,6 @@
                                         <option value="3">3</option>
                                         <option value="4">4</option>
                                         <option value="5">5</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label for="specific-gravity">specific-gravity</label>
-                                    <select class="form-control" name="sg" id="sg">
-                                        <option value="1.005">1.005</option>
-                                        <option value="1.01">1.01</option>
-                                        <option value="1.015">1.015</option>
-                                        <option value="1.02" selected>1.02</option>
-                                        <option value="1.025">1.025</option>
                                     </select>
                                 </div>
                             </div>

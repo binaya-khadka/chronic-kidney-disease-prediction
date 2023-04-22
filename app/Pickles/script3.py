@@ -67,7 +67,6 @@ ane = float(sys.argv[24])
 # print("hello")
 # print(age, bp, sg, al, su, rbc, pc, pcc, ba, bgr, bu, sc, sod, pot, hemo, pcv, wc, rc, htn, dm, cad, appet, pe, ane)
 
-
 # print(type(age))
 # print(type(bp))
 # print(type(sg))
@@ -93,6 +92,7 @@ ane = float(sys.argv[24])
 # print(type(pe))
 # print(type(ane))
 # Process the input using the loaded model
+
 X = pd.DataFrame([[age, bp, sg, al, su, rbc, pc, pcc, ba, bgr, bu, sc, sod, pot, hemo, pcv, wc, rc, htn, dm, cad, appet, pe, ane]])
 # X = np.array([[50, 80, 1.015, 0, 1, 1, 0, 0, 0,  219, 176, 13.8, 136, 4.5, 8.6, 24, 13200, 2.7, 1, 0, 0, 0, 1,1]])
 
@@ -101,7 +101,7 @@ X = pd.DataFrame([[age, bp, sg, al, su, rbc, pc, pcc, ba, bgr, bu, sc, sod, pot,
 
 #1 NotCKD
 # X = pd.DataFrame([[58.0,80.0,1.025,0.0,0.0,1,1,0,0,131.0,18.0,1.1,141.0,3.5,15.8,53.0,6800.0,6.1,0,0,0,0,0,0]])
-
+# X = pd.DataFrame([[55.0, 80.0, 1.020, 0.0, 0.0, 1, 1, 0, 0, 140.0, 49.0, 0.5, 150.0, 4.9, 15.7, 47.0, 6700.0, 4.9, 0, 0, 0, 0, 0, 0]])
 
 # print(X)
 y_pred = model.predict(X)
