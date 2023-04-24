@@ -66,9 +66,19 @@ class PredictionController extends Controller
     $scriptPath = base_path('app/Pickles/script3.py');
     $command = "python $scriptPath $age $bp $sg $al $su $rbc $pc $pcc $ba $bgr $bu $sc $sod $pot $hemo $pcv $wc $rc $htn $dm $cad $appet $pe $ane ";
     $output = shell_exec($command);
-    $result = intval($output);
 
-    $a->class = $result;
+    // $result = intval($output);
+
+    // try
+    // split the output into class label and confidence level
+    $output_arr = explode(' ', $output);
+
+    // extract class label and confidence level
+    $class_label = intval($output_arr[0]);
+    $confidence_level = floatval($output_arr[1]);
+
+    $a->class = $class_label;
+    $a->c_level = $confidence_level;
     $a->save();
 
     // Display the output in the frontend

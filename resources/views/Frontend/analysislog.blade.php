@@ -61,11 +61,19 @@
                         ?>
                         @if ($x == 0)
                             <span style="color: red;">CKD</span>
+                            
                         @elseif ($x == 1)
                             <span style="color: green;">NOT_CKD</span>
                         @else
                             RESULT NOT FOUND
                         @endif
+                    </p>
+                    <p>
+                        Confidence Level:
+                        <?php
+                        echo $user->c_level ;
+                        echo "%";
+                        ?>
                     </p>
                     {{-- added code --}}
                     <span class="card-text" style="font-size: small;">Age: {{ $user->age }},</span>

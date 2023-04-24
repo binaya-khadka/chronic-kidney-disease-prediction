@@ -4,6 +4,10 @@ import pandas as pd
 import os
 import sys
 
+import numpy as np
+import math
+
+
 def gaussian_pdf(x, mean, std):
     """Compute the probability density function of a Gaussian distribution"""
     exponent = np.exp(-((x - mean) ** 2) / (2 * std ** 2))
@@ -28,12 +32,17 @@ class GaussianNaiveBayes:
         for i, c in enumerate(self.classes):
             likelihood = gaussian_pdf(X, self.mean[i, :], self.std[i, :])
             posteriors[:, i] = np.log(likelihood).sum(axis=1) + np.log(self.prior[i])
-        
-        return self.classes[np.argmax(posteriors, axis=1)]
 
+        log_probabilities = posteriors - np.max(posteriors, axis=1)[:, np.newaxis]
+        probabilities = np.exp(log_probabilities)
+        confidences = np.max(probabilities, axis=1) - np.partition(probabilities, -2, axis=1)[:,-2]
+        predicted_labels = self.classes[np.argmax(posteriors, axis=1)]
+
+        return predicted_labels, confidences
 
 # Load the saved model from a pickle file
-model_file_path = os.path.join(os.path.dirname(__file__), 'CKD_Model_v4.pkl')
+# model_file_path = os.path.join(os.path.dirname(__file__), 'CKD_Model_v4.pkl')
+model_file_path = os.path.join(os.path.dirname(__file__), 'CKD_Model_v4_withConfidence.pkl')
 with open(model_file_path, 'rb') as f:
     model = pickle.load(f)
 
@@ -104,8 +113,7 @@ X = pd.DataFrame([[age, bp, sg, al, su, rbc, pc, pcc, ba, bgr, bu, sc, sod, pot,
 # X = pd.DataFrame([[55.0, 80.0, 1.020, 0.0, 0.0, 1, 1, 0, 0, 140.0, 49.0, 0.5, 150.0, 4.9, 15.7, 47.0, 6700.0, 4.9, 0, 0, 0, 0, 0, 0]])
 
 # print(X)
-y_pred = model.predict(X)
-
+y_pred, confidence = model.predict(X)
+confidence_level = confidence * 100
 # Give output
-print( y_pred[0])
-
+print( y_pred[0], confidence_level[0])

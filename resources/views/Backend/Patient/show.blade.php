@@ -43,7 +43,7 @@
                 <tr>
                   <th>Latest Result</th>
                   <td style="color: tomato; font-weight: 700;">
-                      {{ getClassLabel($analysis->first()->class) }}
+                      {{ getClassLabel($analysis->last()->class) }}
                   </td>
                 </tr>
               @endif  

@@ -50,10 +50,12 @@
       <div class="divider"></div>
       <h3 class="smallHeaderTitle">
         Result: 
-        <span style="color: tomato; font-weight: 600;">
-          <?php
-            echo (auth()->user()->analysis->first()->class === 0) ? "CKD" : "NOT CKD";
-          ?>
+        <?php
+        $class = auth()->user()->analysis->last()->class;
+        $text = ($class === 0) ? 'CKD' : 'NOT CKD';
+        $color = ($class === 0) ? 'tomato' : 'green';
+        echo "<span style='color: $color; font-weight: 600;'>$text</span>";
+        ?>
           <?php
             // if(auth()->user()->analysis->first()->class === 0) {
             //   echo "CKD";
@@ -69,8 +71,8 @@
       </h3>
       <h3 class="smallHeaderTitle">
         Date: 
-        <span style="color: tomato; font-weight: 600;">
-          {{ (auth()->user()->analysis->first()->created_at->format('Y-m-d')) }}
+        <span style="color: rgb(0, 0, 0); font-weight: 600;">
+          {{ (auth()->user()->analysis->last()->created_at->format('Y-m-d')) }}
         </span>
       </h3>
     </div>
@@ -79,3 +81,5 @@
 </div>
 
 @endsection
+
+
