@@ -41,7 +41,6 @@ Route::prefix('/admin/patient/')->name('admin.patient.')->middleware(['auth', 'i
 });
 
 Route::get('/analysis/create', [HomeController::class, 'analysis_create'])->name('analysis.create')->middleware(['auth']);
-// Route::post('/analysis/store', [HomeController::class, 'analysis_store'])->name('analysis.store')->middleware(['auth']);
 Route::post('/analysis/store', [PredictionController::class, 'predict'])->name('analysis.store')->middleware(['auth']);
 Route::get('/analysis/log', [HomeController::class, 'analysis_log'])->name('analysis.log')->middleware(['auth']);
 Route::post('/predict', [PredictionController::class, 'predict'])->name('predict');
