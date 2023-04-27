@@ -11,9 +11,9 @@ class PredictionController extends Controller
   public function predict(Request $request)
   {
     $a = new Analysis;
-    $a->age = $request->age ?? 51;
+    $a->age = $request->age ?? 42;
     $a->user_id = $request->user_id;
-    $a->bp = $request->bp ?? 76.325;
+    $a->bp = $request->bp ?? 70.0;
     $a->sg = $request->sg;
     $a->al = $request->al;
     $a->su = $request->su;
@@ -21,15 +21,15 @@ class PredictionController extends Controller
     $a->pc = $request->pc;
     $a->pcc = $request->pcc;
     $a->ba = $request->ba;
-    $a->bgr = $request->bgr ?? 148.5875;
-    $a->bu = $request->bu ?? 56.523;
-    $a->sc = $request->sc ?? 3.051875;
-    $a->sod = $request->sod ?? 137.70125;
-    $a->pot = $request->pot ?? 4.564;
-    $a->hemo = $request->hemo ?? 12.49325;
-    $a->pcv = $request->pcv ?? 38.805;
-    $a->wc = $request->wc ?? 8360.5;
-    $a->rc = $request->rc ?? 4.69775;
+    $a->bgr = $request->bgr ?? 75.0;
+    $a->bu = $request->bu ?? 31.0;
+    $a->sc = $request->sc ?? 1.2;
+    $a->sod = $request->sod ?? 141.0;
+    $a->pot = $request->pot ?? 3.5;
+    $a->hemo = $request->hemo ?? 16.5;
+    $a->pcv = $request->pcv ?? 54.0;
+    $a->wc = $request->wc ?? 7800.0;
+    $a->rc = $request->rc ?? 6.2;
     $a->htn = $request->htn;
     $a->dm = $request->dm;
     $a->cad = $request->cad;

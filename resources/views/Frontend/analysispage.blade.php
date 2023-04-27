@@ -20,16 +20,16 @@
                                 </div>
                                 <div class="col-md-3">
                                     <label for="blood-pressure" class="form-label">Blood Pressure</label>
-                                    <input type="number" step="0.01" class="form-control" id="blood-pressure" name="bp">
+                                    <input type="number" step="0.01" class="form-control" id="blood-pressure" name="bp" placeholder="Ranges(90-140) mmHg">
                                 </div>
                                 <div class="col-md-3">
                                     <label for="specific-gravity">specific-gravity</label>
-                                    <select class="form-control" name="sg" id="sg">
+                                    <select class="form-control" name="sg" id="sg" >
                                         <option value="1.005">1.005</option>
                                         <option value="1.01">1.01</option>
                                         <option value="1.015">1.015</option>
-                                        <option value="1.02" selected>1.02</option>
-                                        <option value="1.025">1.025</option>
+                                        <option value="1.02" >1.02</option>
+                                        <option value="1.025" selected>1.025</option>
                                     </select>
                                 </div>
                                 <div class="col-md-3">
@@ -92,31 +92,31 @@
                                 </div>
                                 <div class="col-md-3">
                                     <label for="blood-glucose-random" class="form-label">Blood Glucose Random</label>
-                                    <input type="number" step="0.01" class="form-control" id="blood-glucose-random" name="bgr">
+                                    <input type="number" step="0.01" class="form-control" id="blood-glucose-random" name="bgr" placeholder="normal(90-180)mg/dl">
                                 </div>
                                 <div class="col-md-3">
                                     <label for="blood-urea" class="form-label">Blood Urea</label>
-                                    <input type="number" step="0.01" class="form-control" id="blood-urea" name="bu">
+                                    <input type="number" step="0.01" class="form-control" id="blood-urea" name="bu" placeholder="normal(7-20) mg/dl">
                                 </div>
                                 <div class="col-md-3">
                                     <label for="serum-creatinine" class="form-label">Serum Creatinine</label>
-                                    <input type="number" step="0.01" class="form-control" id="serum-creatinine" name="sc">
+                                    <input type="number" step="0.01" class="form-control" id="serum-creatinine" name="sc" placeholder=" normal(0.5-1.2) mg/dl">
                                 </div>
                             </div>    
                             <div class="row">
                                 
                                 <div class="col-md-3">
                                     <label for="sodium" class="form-label">Sodium</label>
-                                    <input type="number" step="0.01" class="form-control" id="sodium" name="sod">
+                                    <input type="number" step="0.01" class="form-control" id="sodium" name="sod" placeholder="normal(135 - 145) mEq/L">
                                 </div>
                                 <div class="col-md-3">
                                     <label for="sodium" class="form-label">Pottasium</label>
-                                    <input type="number" step="0.01" class="form-control" id="pottasium" name="pot">
+                                    <input type="number" step="0.01" class="form-control" id="pottasium" name="pot" placeholder="normal(3.5 -5.2) mEq/L">
                                 </div>
                             
                                 <div class="col-md-3">
                                     <label for="sodium" class="form-label">Haemoglobin</label>
-                                    <input type="number" step="0.01" class="form-control" id="haemoglobin" name="hemo">
+                                    <input type="number" step="0.01" class="form-control" id="haemoglobin" name="hemo" placeholder="normal(13.8 -17.2)g/dL">
                                 </div>
                                 <div class="col-md-3">
                                     <label for="sodium" class="form-label">Packed cell Volume</label>
