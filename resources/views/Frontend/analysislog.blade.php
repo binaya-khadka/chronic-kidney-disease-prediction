@@ -1,6 +1,5 @@
 @extends('Frontend.Layouts.app')
 @include('HelperFunction.function')
-
 @section('title', 'Analysis Log')
 
 @section('content')
@@ -49,7 +48,6 @@
         {{-- message section ends --}}
 
         <div class="card" style="gap: 10px;">
-            {{-- @foreach ($user_data as $user) --}}
             @foreach ($user_data->reverse() as $user)
                 <h5 class="card-header">Report {{ $loop->iteration }} </h5>
                 <div class="card-body">

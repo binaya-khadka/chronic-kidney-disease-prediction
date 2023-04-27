@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\Analysis;
 use App\Models\Contactus;
-use App\Models\Patient;
 use App\Models\User;
 use Illuminate\Http\Request;
 

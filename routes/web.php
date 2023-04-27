@@ -38,9 +38,6 @@ Route::prefix('/admin/patient/')->name('admin.patient.')->middleware(['auth', 'i
     Route::get('/report/{id}', [AdminController::class, 'patient_report_show'])->name('report.show');
     Route::get('show/{id}', [AdminController::class, 'patient_show'])->name('show');
     Route::delete('{id}', [AdminController::class, 'patient_delete'])->name('delete');
-    // Route::get('trashed', [AdminController::class, 'patient_trash_store'])->name('trashed');
-    // Route::delete('trashed/{id}', [AdminController::class, 'patient_trash_force_delete'])->name('trashed.delete');
-    // Route::get('trashed/restore/{id}', [AdminController::class, 'patient_trash_record_restore'])->name('trashed.restore');
 });
 
 Route::get('/analysis/create', [HomeController::class, 'analysis_create'])->name('analysis.create')->middleware(['auth']);

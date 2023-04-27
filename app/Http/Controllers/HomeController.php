@@ -24,26 +24,6 @@ class HomeController extends Controller
         return view('Frontend.register');
     }
 
-    // public function register_store(Request $request)
-    // {
-    //     $validated = $request->validate([
-    //         'name' => 'required',
-    //         'age' => 'required',
-    //         'email' => 'required',
-    //         'password' => 'required',
-    //         'phone' => 'required|min:10|max:10',
-    //     ]);
-
-    //     $patient = Patient::create($request->all());
-    //     if ($patient) {
-    //         request()->session()->flash('success', 'Account Created Successfully');
-    //         return redirect()->route('homepage.patient.register');
-    //     } else {
-    //         request()->session()->flash('error', 'Error Occured');
-    //     }
-    //     return redirect()->route('homepage.patient.register');
-    // }
-
     public function analysis_create()
     {
         return view('Frontend.analysispage');
@@ -100,8 +80,8 @@ class HomeController extends Controller
         return view('Frontend.userprofile');
     }
     // test
-    public function predictionResult(){
+    public function predictionResult()
+    {
         return view('Frontend.predictionResult');
     }
 }
-
