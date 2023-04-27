@@ -7,32 +7,38 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## About Chronic Kidney Disease Prediction Using Naive Bayes ALgorithm
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+The Chronic Kidney Disease Prediction system is a web-based system that helps patient keep 
+track of their kidney health. It works by collecting information about the patient's health and 
+using data mining algorithms to analyze the information and make predictions about the 
+patient's condition. This system helps patient to make faster and more accurate diagnoses, and 
+can be used from a distance. The goal is to make it easier for patient to keep track of their 
+health and help them understand their medical status.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+##Problem Statement
+• People with chronic diseases have a higher risk of health problems and unequal access to 
+healthcare.
+• Lack of technology to monitor and track health care for these diseases makes it difficult 
+and time-consuming.
+• Health measurements and records are often recorded on paper, which can lead to missing 
+information.
+• Patients with chronic diseases struggle to choose diets and exercise plans that are right for 
+them.
+• Society needs to improve health care and outcomes for people with chronic diseases
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+## Objective
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+• To reduce the chances of CKD leading to dialysis or kidney transplantation.
+• Replace paper measurement recording with a database in the application
+• Allow patients to view medical records and progress
+• Use data mining and machine learning algorithms to build the model
+• Focus on chronic kidney diseases by using Naive Bayes algorithms.
+• Provide experimental results and analysis to measure accuracy
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
+## Design
+Use case diagram
 ### Premium Partners
 
 - **[Vehikl](https://vehikl.com/)**
