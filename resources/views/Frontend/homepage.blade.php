@@ -1,5 +1,5 @@
 @extends('Frontend.Layouts.app')
-
+@section('title', 'CKD System')
 @section('content')
   <div class="card-body">
   @if (session('status'))
