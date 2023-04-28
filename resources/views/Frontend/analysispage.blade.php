@@ -120,20 +120,20 @@
                                 </div>
                                 <div class="col-md-3">
                                     <label for="sodium" class="form-label">Packed cell Volume</label>
-                                    <input type="number" step="0.01" class="form-control" id="packed-cell-volume" name="pcv">
+                                    <input type="number" step="0.01" class="form-control" id="packed-cell-volume" name="pcv" placeholder="normal(35-48)%">
                                 </div>
                             </div>    
                             <div class="row">
                                
                                 <div class="col-md-3">
                                     <label for="sodium" class="form-label">White Blood Cell Count</label>
-                                    <input type="number" step="0.01" class="form-control" id="white-blood-cell-count"
+                                    <input type="number" step="0.01" class="form-control" id="white-blood-cell-count" placeholder="normal(4500-11000) per ML"
                                         name="wc">
                                 </div>
 
                                 <div class="col-md-3">
                                     <label for="sodium" class="form-label">Red Blood Cell Count</label>
-                                    <input type="number" step="0.01" class="form-control" id="red-blood-cell-count" name="rc">
+                                    <input type="number" step="0.01" class="form-control" id="red-blood-cell-count" name="rc" placeholder="normal(4.2 -6.1) millions cells per  microLiter ">
                                 </div>
                                 <div class="col-md-3">
                                     <label for="sodium" class="form-label">Hypertension</label>
