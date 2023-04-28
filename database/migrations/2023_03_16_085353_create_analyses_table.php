@@ -41,7 +41,7 @@ return new class extends Migration
       $table->enum('pe', ['0', '1'])->defualt(0);
       $table->enum('ane', ['0', '1'])->default(0);
       $table->integer('class');
-      $table->foreign('user_id')->references('id')->on('users');
+      $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
       $table->timestamps();
     });
   }
