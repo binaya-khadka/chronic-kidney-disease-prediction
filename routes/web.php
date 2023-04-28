@@ -38,9 +38,6 @@ Route::prefix('/admin/patient/')->name('admin.patient.')->middleware(['auth', 'i
     Route::get('/report/{id}', [AdminController::class, 'patient_report_show'])->name('report.show');
     Route::get('show/{id}', [AdminController::class, 'patient_show'])->name('show');
     Route::delete('{id}', [AdminController::class, 'patient_delete'])->name('delete');
-    // Route::get('trashed', [AdminController::class, 'patient_trash_store'])->name('trashed');
-    // Route::delete('trashed/{id}', [AdminController::class, 'patient_trash_force_delete'])->name('trashed.delete');
-    // Route::get('trashed/restore/{id}', [AdminController::class, 'patient_trash_record_restore'])->name('trashed.restore');
 });
 
 Route::get('/analysis/create', [HomeController::class, 'analysis_create'])->name('analysis.create')->middleware(['auth']);
@@ -60,15 +57,6 @@ Route::get('/frontend/contactus', [HomeController::class, 'contactUs'])->name('F
 
 
 Route::post('/frontend/contactus', [HomeController::class, 'contactusStore'])->name('frontend.contactus.store');
-
-// Route::get('/admin/patient/index', [AdminController::class, 'patient_index'])->name('admin.patient.index');
-// Route::get('/admin/patient/show/{id}', [AdminController::class, 'patient_show'])->name('admin.patient.show');
-// Route::delete('/admin/patient/{id}', [AdminController::class, 'patient_delete'])->name('admin.patient.delete');
-
-// Route::get('/admin/patient/trashed', [AdminController::class, 'patient_trash_store'])->name('admin.patient.trashed');
-// Route::delete('/admin/patient/trashed/{id}', [AdminController::class, 'patient_trash_force_delete'])->name('admin.patient.trashed.delete');
-// Route::get('/admin/patient/trashed/restore/{id}', [AdminController::class, 'patient_trash_record_restore'])->name('admin.patient.trashed.restore');
-
 
 Route::get('/admin/contactus', [AdminController::class, 'contactIndex'])->name('contact.index')->middleware(['auth', 'isAdmin']);
 // user profile added here

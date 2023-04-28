@@ -43,7 +43,9 @@
     <p class="mini-title"><b>Name:</b> 
       {{ ucFirst(auth()->user()->name) }}
     </p>
-    <p class="mini-title" style="margin-bottom: 1.75rem"><b>Total Analysis Performed:</b> {{auth()->user()->analysis->count()}}</p>
+    <p class="mini-title" style="margin-bottom: 1.75rem"><b>Total Analysis Performed:</b>
+      {{auth()->user()->analysis->count()}}
+    </p>
     
     <div class="lastAnalysisReportContainer">
       <p style="margin-bottom: 0;"><b class="profile_report_title">Last Analysis Report</b></p>
