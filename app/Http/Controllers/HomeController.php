@@ -27,7 +27,10 @@ class HomeController extends Controller
     // Anlaysis Page
     public function analysis_create()
     {
-        return view('Frontend.analysispage');
+        // $patient_record_only_id_row = Patient::all()->pluck('id');
+        // return view('Frontend.analysispage', ['patient_id' => $patient_record_only_id_row]);
+        $patient_record = Patient::all();
+        return view('Frontend.analysispage', ['patient_id' => $patient_record]);
     }
 
     // Storing data for Analysis Analysis Page
@@ -42,7 +45,7 @@ class HomeController extends Controller
     public function analysis_log()
     {
         $user = auth()->user()->id;
-        $getting_data_of_user = DB::table('analyses')->where('user_id', $user)->get();
+        $getting_data_of_user = DB::table('analyses')->where('patient_id', $user)->get();
         return view('Frontend.analysislog', ['user_data' => $getting_data_of_user]);
     }
 

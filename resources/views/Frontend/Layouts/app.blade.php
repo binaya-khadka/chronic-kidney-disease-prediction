@@ -11,7 +11,6 @@
   <title>@yield('title')</title>
   @yield('nav_links')
   @yield('css')
-  <link rel="stylesheet" href="{{asset('assets/css/global.css')}}">
 </head>
 
 <body>

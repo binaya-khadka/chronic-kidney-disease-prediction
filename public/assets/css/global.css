@@ -48,9 +48,6 @@ svg {
     font-family: 'Gentium', sans-serif;
 }
 
-.flex {
-    display: flex;
-}
 
 .fdr {
     flex-direction: row;

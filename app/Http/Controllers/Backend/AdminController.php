@@ -24,7 +24,7 @@ class AdminController extends Controller
 
   public function patient_index()
   {
-    $patients['datas'] = User::where('IsAdmin', 0)->get();
+    $patients['datas'] = Patient::all();
     return view('Backend.Patient.index', compact('patients'));
   }
 

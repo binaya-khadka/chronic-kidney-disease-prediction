@@ -16,14 +16,14 @@ return new class extends Migration
     Schema::create('analyses', function (Blueprint $table) {
       $table->increments('id');
       $table->integer('age')->default(51);
-      $table->integer('user_id')->unsigned();
+      $table->integer('patient_id')->unsigned();
       $table->double('bp')->nullable();
       $table->enum('sg', [1.005, 1.010, 1.015, 1.020, 1.025])->default(1.020);
       $table->enum('al', [0, 1, 2, 3, 4, 5])->default(0);
       $table->enum('su', [0, 1, 2, 3, 4, 5])->default(0);
       $table->boolean('rbc')->default(true);
       $table->boolean('pc')->default(true);
-      $table->boolean('pcc')->default(false);
+      // $table->boolean('pcc')->default(false);
       $table->boolean('ba')->default(false);
       $table->double('bgr')->default(148.5875);
       $table->double('bu')->default(56.523);
