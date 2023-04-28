@@ -1,5 +1,4 @@
 @extends('Frontend.Layouts.app')
-
 @section('title', 'Analysis Form')
 
 @section('content')
@@ -8,6 +7,13 @@
             <div class="col-md-6 col-lg-4">
                 <div class="card">
                     <div class="card-body">
+                        @if($errors->any())
+                            <div class="alert alert-danger">
+                                @foreach($errors->all() as $error)
+                                    {{$error}}
+                                @endforeach
+                            </div>
+                        @endif
                         <h5 class="card-title text-center mb-4">Analysis Form</h5>
                         <form action="{{ route('analysis.store') }}" method="POST">
                             {{ csrf_field() }}

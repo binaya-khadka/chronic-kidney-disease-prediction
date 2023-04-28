@@ -32,6 +32,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\Backend\AdminController::class, 'index'])->name('home')->middleware(['auth', 'isAdmin']);
 
+// Admin Panel
 Route::prefix('/admin/patient/')->name('admin.patient.')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('index', [AdminController::class, 'patient_index'])->name('index');
     Route::get('/report', [AdminController::class, 'patient_report'])->name('report');
@@ -50,21 +51,14 @@ Route::post('/predict', [PredictionController::class, 'predict'])->name('predict
 
 Route::get('/analysis', [HomeController::class, 'analysis_show'])->name('analysis.show')->middleware(['auth']);
 Route::get('/', [HomeController::class, 'homepage'])->name('homepage')->middleware(['auth']);
+// Prediction page for logged in patient
 Route::get('/prediction', [HomeController::class, 'prediction'])->name('prediction');
+// About US Page for Normal Users
 Route::get('/frontend/aboutus', [HomeController::class, 'aboutUs'])->name('Frontend.aboutus');
+// Get Method for Feedback
 Route::get('/frontend/contactus', [HomeController::class, 'contactUs'])->name('Frontend.contactus');
-
-
+// Post Method for Feedback
 Route::post('/frontend/contactus', [HomeController::class, 'contactusStore'])->name('frontend.contactus.store');
-
-// Route::get('/admin/patient/index', [AdminController::class, 'patient_index'])->name('admin.patient.index');
-// Route::get('/admin/patient/show/{id}', [AdminController::class, 'patient_show'])->name('admin.patient.show');
-// Route::delete('/admin/patient/{id}', [AdminController::class, 'patient_delete'])->name('admin.patient.delete');
-
-// Route::get('/admin/patient/trashed', [AdminController::class, 'patient_trash_store'])->name('admin.patient.trashed');
-// Route::delete('/admin/patient/trashed/{id}', [AdminController::class, 'patient_trash_force_delete'])->name('admin.patient.trashed.delete');
-// Route::get('/admin/patient/trashed/restore/{id}', [AdminController::class, 'patient_trash_record_restore'])->name('admin.patient.trashed.restore');
-
 
 Route::get('/admin/contactus', [AdminController::class, 'contactIndex'])->name('contact.index')->middleware(['auth', 'isAdmin']);
 // user profile added here

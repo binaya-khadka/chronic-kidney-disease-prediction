@@ -24,11 +24,13 @@ class HomeController extends Controller
         return view('Frontend.register');
     }
 
+    // Anlaysis Page
     public function analysis_create()
     {
         return view('Frontend.analysispage');
     }
 
+    // Storing data for Analysis Analysis Page
     public function analysis_store(Request $req)
     {
         $store_in_database = Analysis::create($req->all());
@@ -36,6 +38,7 @@ class HomeController extends Controller
         return redirect()->route('analysis.create')->with('mssg', 'Successfully Stored The Data');
     }
 
+    // Analysis Log / Report Page to show report of the patient
     public function analysis_log()
     {
         $user = auth()->user()->id;
@@ -43,27 +46,31 @@ class HomeController extends Controller
         return view('Frontend.analysislog', ['user_data' => $getting_data_of_user]);
     }
 
+    // Homepage
     public function homepage()
     {
         return view('Frontend.homepage');
     }
 
+    // Prediction Page
     public function prediction()
     {
         return view('Frontend.prediction');
     }
 
+    // About us page
     public function aboutUs()
     {
         return view('Frontend.aboutus');
     }
 
+    // Contact us page
     public function contactUs()
     {
         return view('Frontend.contactus');
     }
 
-
+    // Contact us page for Feedback System
     public function contactusStore(Request $request)
     {
         $contact = new Contactus();
@@ -79,7 +86,8 @@ class HomeController extends Controller
     {
         return view('Frontend.userprofile');
     }
-    // test
+
+    // Prediction Result Page for displaying Result
     public function predictionResult()
     {
         return view('Frontend.predictionResult');
