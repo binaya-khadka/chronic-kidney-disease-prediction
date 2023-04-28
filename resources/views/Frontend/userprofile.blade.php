@@ -43,42 +43,48 @@
     <p class="mini-title"><b>Name:</b> 
       {{ ucFirst(auth()->user()->name) }}
     </p>
+    <?php
+    // if((auth()->user()->analysis()->count()) == 0) {
+    //   echo "hi";
+    // } else {
+    //   echo "bye";
+    // }
+    ?>
     <p class="mini-title" style="margin-bottom: 1.75rem"><b>Total Analysis Performed:</b>
+      @if((auth()->user()->analysis()->count()) == 0)
+        <?php 
+        echo '<span style="font-weight: 500;">';
+        ?>
+        {{"No Analysis has done"}}
+        <?php
+        echo '</span>';
+        ?>
+      @endif
       {{auth()->user()->analysis->count()}}
     </p>
     
-    <div class="lastAnalysisReportContainer">
-      <p style="margin-bottom: 0;"><b class="profile_report_title">Last Analysis Report</b></p>
-      <div class="divider"></div>
-      <h3 class="smallHeaderTitle">
-        Result: 
-        <?php
-        $class = auth()->user()->analysis->last()->class;
-        $text = ($class === 0) ? 'CKD' : 'NOT CKD';
-        $color = ($class === 0) ? 'tomato' : 'green';
-        echo "<span style='color: $color; font-weight: 600;'>$text</span>";
-        ?>
+    @if((auth()->user()->analysis()->count()) > 0) 
+      <div class="lastAnalysisReportContainer">
+        <p style="margin-bottom: 0;"><b class="profile_report_title">Last Analysis Report</b></p>
+        <div class="divider"></div>
+        <h3 class="smallHeaderTitle">
+          Result: 
           <?php
-            // if(auth()->user()->analysis->first()->class === 0) {
-            //   echo "CKD";
-            // }
-            // elseif((auth()->user()->analysis->first()->class === 1)) {
-            //   echo "NOT CKD";
-            // }
-            // else {
-            //   echo "Sorry Unexpected Error Occured"
-            // }
+          $class = auth()->user()->analysis->last()->class;
+          $text = ($class === 0) ? 'CKD' : 'NOT CKD';
+          $color = ($class === 0) ? 'tomato' : 'green';
+          echo "<span style='color: $color; font-weight: 600;'>$text</span>";
           ?>
-        </span>
-      </h3>
-      <h3 class="smallHeaderTitle">
-        Date: 
-        <span style="color: rgb(0, 0, 0); font-weight: 600;">
-          {{ (auth()->user()->analysis->last()->created_at->format('Y-m-d')) }}
-        </span>
-      </h3>
-    </div>
-
+          </span>
+        </h3>
+        <h3 class="smallHeaderTitle">
+          Date: 
+          <span style="color: rgb(0, 0, 0); font-weight: 600;">
+            {{ (auth()->user()->analysis->last()->created_at->format('Y-m-d')) }}
+          </span>
+        </h3>
+      </div>
+    @endif
   </div>
 </div>
 
