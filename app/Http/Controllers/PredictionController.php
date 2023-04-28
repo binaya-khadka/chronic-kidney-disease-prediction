@@ -5,11 +5,24 @@ namespace App\Http\Controllers;
 use App\Models\Analysis;
 use Symfony\Component\Process\Process;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class PredictionController extends Controller
 {
   public function predict(Request $request)
   {
+
+    $validator = Validator::make($request->all(), [
+      'age' => 'required|integer|min:18|max:67',
+    ], [
+      'age.min' => 'The age should be greater than 18',
+      'age.max' => 'The age should be smaller than 60'
+    ]);
+
+    if ($validator->fails()) {
+      return redirect()->back()->withErrors($validator)->withInput();
+    }
+
     $a = new Analysis;
     $a->age = $request->age ?? 42;
     $a->user_id = $request->user_id;

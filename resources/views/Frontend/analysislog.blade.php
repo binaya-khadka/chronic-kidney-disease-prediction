@@ -54,26 +54,14 @@
                 <h5 class="card-header">Report {{ $loop->iteration }} </h5>
                 <div class="card-body">
                     <h5 class="card-title">Result</h5>
-
                     <p class="card-text text-danger" style="font-weight: 700;">
                         <?php
                         $x = $user->class;
                         ?>
-                        @if ($x == 0)
-                            <span style="color: red;">CKD</span>
-                            
-                        @elseif ($x == 1)
-                            <span style="color: green;">NOT_CKD</span>
-                        @else
-                            RESULT NOT FOUND
-                        @endif
+                        {{ colorForCKD($user->class, 0, 1) }}
                     </p>
                     <p>
-                        Confidence Level:
-                        <?php
-                        echo $user->c_level ;
-                        echo "%";
-                        ?>
+                        Confidence Level: {{$user->c_level . "%"}}
                     </p>
                     {{-- added code --}}
                     <span class="card-text" style="font-size: small;">Age: {{ $user->age }},</span>

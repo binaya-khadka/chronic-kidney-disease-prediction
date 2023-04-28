@@ -43,7 +43,7 @@
                 <tr>
                   <th>Latest Result</th>
                   <td style="color: tomato; font-weight: 700;">
-                      {{ getClassLabel($analysis->last()->class) }}
+                      {{ colorForCKD($analysis->last()->class, 0, 1) }}
                   </td>
                 </tr>
               @endif  

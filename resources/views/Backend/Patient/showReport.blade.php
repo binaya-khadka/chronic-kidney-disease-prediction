@@ -54,7 +54,7 @@
                         <th>Anemia</th>
                       </tr>
                     </thead>
-                        <td style="color: tomato; font-weight: 600;">{{ getClassLabel($report['data']->class) }}</td>
+                        <td style="color: tomato; font-weight: 600;">{{ colorForCKD($report['data']->class, 1, 0) }}</td>
                         <td>{{ $report['data']->age }}</td>
                         <td>{{ $report['data']->bp }}</td>
                         <td>{{ $report['data']->sg }}</td>

@@ -1,18 +1,5 @@
 <?php
 
-function getClassLabel($class)
-{
-  switch ($class) {
-    case 0:
-      return "CKD";
-    case 1:
-      return "NOT CKD";
-    default:
-      return "Result Not Found";
-  }
-}
-
-
 function getYesNoLabel($class)
 {
   switch ($class) {
@@ -22,5 +9,16 @@ function getYesNoLabel($class)
       return "Yes";
     default:
       return "Empty or Null";
+  }
+}
+
+function colorForCKD($result, $ckd, $not_ckd)
+{
+  if ($result === $ckd) {
+    echo '<span style="color: red;">CKD</span>';
+  } elseif ($result === $not_ckd) {
+    echo '<span style="color: green;">NOT_CKD</span>';
+  } else {
+    echo '<span style="color: red;">Result Not Found</span>';
   }
 }

@@ -8,6 +8,13 @@
             <div class="col-md-6 col-lg-12">
                 <div class="card">
                     <div class="card-body">
+                        @if($errors->any())
+                            <div class="alert alert-danger" style="width: fit-content; display: flex; margin: auto; margin-bottom: 0.75rem;">
+                                @foreach($errors->all() as $error)
+                                    {{$error}}
+                                @endforeach
+                            </div>
+                        @endif
                         <h5 class="card-title text-center mb-4">Analysis Form</h5>
                         <form action="{{ route('analysis.store') }}" method="POST">
                             {{ csrf_field() }}
