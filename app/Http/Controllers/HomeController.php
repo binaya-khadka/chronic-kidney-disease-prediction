@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Validation\ValidationException;
+use PDO;
 
 class HomeController extends Controller
 {
@@ -23,34 +24,7 @@ class HomeController extends Controller
         return view('Frontend.register');
     }
 
-    public function register_store(Request $request)
-    {
-        // $patient_name = $request->name;
-        // $patient_age = $request->age;
-        // $patient_email = $request->email;
-        // $patient_password = bcrypt($request->password);
-        // $patient_phone = $request->phone;
-
-        // $validation = $this->validate(['name' => 'required', 'email' => 'required']);
-
-        // $this->validate([]);
-        $validated = $request->validate([
-            'name' => 'required',
-            'age' => 'required',
-            'email' => 'required',
-            'password' => 'required',
-            'phone' => 'required|min:10|max:10',
-        ]);
-
-        $patient = Patient::create($request->all());
-        if ($patient) {
-            request()->session()->flash('success', 'Account Created Successfully');
-            return redirect()->route('homepage.patient.register');
-        } else {
-            request()->session()->flash('error', 'Error Occured');
-        }
-        return redirect()->route('homepage.patient.register');
-    }
+    // Anlaysis Page
     public function analysis_create()
     {
         // $patient_record_only_id_row = Patient::all()->pluck('id');
@@ -58,12 +32,16 @@ class HomeController extends Controller
         $patient_record = Patient::all();
         return view('Frontend.analysispage', ['patient_id' => $patient_record]);
     }
+
+    // Storing data for Analysis Analysis Page
     public function analysis_store(Request $req)
     {
         $store_in_database = Analysis::create($req->all());
         $store_in_database;
         return redirect()->route('analysis.create')->with('mssg', 'Successfully Stored The Data');
     }
+
+    // Analysis Log / Report Page to show report of the patient
     public function analysis_log()
     {
         $user = auth()->user()->id;
@@ -71,26 +49,31 @@ class HomeController extends Controller
         return view('Frontend.analysislog', ['user_data' => $getting_data_of_user]);
     }
 
+    // Homepage
     public function homepage()
     {
         return view('Frontend.homepage');
     }
 
+    // Prediction Page
     public function prediction()
     {
         return view('Frontend.prediction');
     }
+
+    // About us page
     public function aboutUs()
     {
         return view('Frontend.aboutus');
     }
 
+    // Contact us page
     public function contactUs()
     {
         return view('Frontend.contactus');
     }
 
-
+    // Contact us page for Feedback System
     public function contactusStore(Request $request)
     {
         $contact = new Contactus();
@@ -100,9 +83,16 @@ class HomeController extends Controller
         $contact->save();
         return redirect()->back()->with('message', 'Data Send Successfully');
     }
+
     // user profile added
     public function userprofile()
     {
         return view('Frontend.userprofile');
+    }
+
+    // Prediction Result Page for displaying Result
+    public function predictionResult()
+    {
+        return view('Frontend.predictionResult');
     }
 }

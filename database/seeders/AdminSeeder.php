@@ -24,6 +24,12 @@ class AdminSeeder extends Seeder
         'isAdmin' => true,
       ],
       [
+        'name' => 'Super Admin',
+        'email' => 'superadmin@orchid.com',
+        'password' => bcrypt('admin'),
+        'isAdmin' => true,
+      ],
+      [
         'name' => 'Niraj Uprety',
         'email' => 'niraj@patient.com',
         'password' => bcrypt('patient'),
@@ -47,8 +53,13 @@ class AdminSeeder extends Seeder
         'email' => 'patient@patient.com',
         'password' => bcrypt('patient'),
         'isAdmin' => false,
-
       ],
+      [
+        'name' => 'patient2',
+        'email' => 'patient2@patient.com',
+        'password' => bcrypt('patient'),
+        'isAdmin' => false,
+      ]
     ]);
   }
 }

@@ -4,7 +4,7 @@
 @section('content')
 <div class="login-box" style="margin:auto;">
   <div class="login-logo">
-    <a href=""><b>ADMIN </b>LOGIN</a>
+    <a href="">LOGIN</a>
   </div>
 
   <div class="card">

@@ -15,15 +15,19 @@
         <li class="nav-item">
           <a class="nav-link" href="{{route('analysis.log')}}">Analysis Log</a>
         </li>
-        {{-- <li class="nav-item">
-          <a class="nav-link" href="Udpate.html">Update Profile</a>
-        </li> --}}
         <li class="nav-item">
           <a class="nav-link" href="{{route('Frontend.aboutus')}}">About Us</a>
         </li>
+
         <li class="nav-item">
           <a class="nav-link" href="{{route('Frontend.contactus')}}">Contact Us</a>
         </li>
+
+        @if(auth()->user())
+          <li class="nav-item">
+            <a href="{{ route('Frontend.userprofile') }}" class="nav-link">Profile</a>
+          </li>
+        @endif
       </ul>
     </div>
 

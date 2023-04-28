@@ -1,5 +1,7 @@
 @extends('Frontend.Layouts.app')
 
+@section('title', 'CKD System')
+
 @section('content')
   <div class="card-body">
   @if (session('status'))
@@ -9,7 +11,6 @@
   @endif
 {{ __('You are logged in!') }}
 </div>
-
 
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
@@ -33,19 +34,13 @@
     </a>
   </div>
   <div class="card text-center">
-    
     <div class="card-body">
         <h2>What are our Objectives</h2>
       <p class="card-text">To reduce the chances of CKD leading to dialysis or kidney transplantation. </p>
-      <p class="card-text">Replace paper measurement recording with a database in the application
-    </p>
+      <p class="card-text">Replace paper measurement recording with a database in the application</p>
       <p class="card-text">Allow patients to view medical records and progress </p>
       <p class="card-text">Use data mining and machine learning algorithms to build the model </p>
       <p class="card-text">Provide experimental results and analysis to measure accuracy </p>
-    
     </div>
-    {{-- <div class="card-footer text-muted">
-      2 days ago
-    </div> --}}
   </div>
 @endsection

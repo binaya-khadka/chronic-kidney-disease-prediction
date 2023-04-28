@@ -1,23 +1,28 @@
 <?php
-echo "output : $output <br>";
-$type = gettype($output);
-echo "type : $type <br>";
+$output = session('output');
+echo "Output: $output <br>";
 
-$result = intval($output);
-$type1 = gettype($result);
-echo "type after gettype : $type1 <br>";
+// $num = session('num');
+// echo "num: $num <br>";
 
-echo "the value of result after integer : $result";
+// $type = gettype($output);
+// echo "type : $type <br>";
 
-echo "outcomes : $result";
-if($result == 1){
-    echo "Not CKD <br>";
-}
-else if($result == 0){
-    echo "CKD <br>";
-}
-else{
-        $sum= $result + 5;
-        echo "sum = ".$sum;
-}
+// $result = intval($output);
+// $type1 = gettype($result);
+// echo "type after gettype : $type1 <br>";
+
+// echo "the value of result after integer : $result";
+
+// echo "outcomes : $result";
+// if($result == 1){
+//     echo "Not CKD <br>"; 
+// }
+// else if($result == 0){
+//     echo "CKD <br>";
+// }
+// else{
+//         $sum= $result + 5;
+//         echo "sum = ".$sum;
+// }
 ?>

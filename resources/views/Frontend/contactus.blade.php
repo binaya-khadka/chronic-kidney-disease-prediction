@@ -3,17 +3,17 @@
 @section('title', 'Contact Us')
 
 @section('content')
-<div class="topContainer">
+<div class="container" style="margin: 5rem 0;">
   <div class="container mt-4">
-    <div class="row">
+    <div class="row aic jcc">
       <div class="col-md-6">
-        <h3>Contact Information</h3>
-        <p><i class="fa fa-map-marker"></i>123 Main Street, New York, NY 10001</p>
-        <p><i class="fa fa-phone"></i><a href="tel:123-456-7890">123-456-7890</a></p>
-        <p><i class="fa fa-envelope-o"></i><a href="mailto:info@example.com">info@example.com</a></p>
-        <p><i class="fa fa-facebook"></i><a href="#">Facebook</a></p>
+        <h2 class="b-title">Contact Information</h2>
+        <p><i class="fa fa-map-marker"></i>Bijayachowk Gausala, Kathmandu</p>
+        <p><i class="fa fa-phone" aria-hidden="true"></i>+977-9*********</p>
+        <p><i class="fa fa-envelope"></i><a href="mailto:info@example.com">info@example.com</a></p>
+        {{-- <p><i class="fa fa-facebook-official" aria-hidden="true"></i>info@facebook.com</p>
         <p><i class="fa fa-twitter"></i><a href="#">Twitter</a></p>
-        <p><i class="fa fa-instagram"></i><a href="#">Instagram</a></p>
+        <p><i class="fa fa-instagram"></i><a href="#">Instagram</a></p> --}}
       </div>
       <div class="col-md-6">
         <img
